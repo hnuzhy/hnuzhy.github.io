@@ -5,11 +5,15 @@
 function playVids(videoId) {
     var videoMerge = document.getElementById(videoId + "Merge");
     var vid = document.getElementById(videoId);
-
+    
     var position = 0.5;
     var vidWidth = vid.videoWidth/2;
     var vidHeight = vid.videoHeight;
 
+    var scaleRatio = 1500.0 / vid.videoWidth;  // 1500 vs. 1920
+    vidWidth = vidWidth * scaleRatio;
+    vidHeight = vidHeight * scaleRatio;
+    
     var mergeContext = videoMerge.getContext("2d");
 
     
