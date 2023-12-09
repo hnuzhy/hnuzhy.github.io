@@ -171,12 +171,12 @@ Detection of human body and its parts (e.g., head or hands) has been intensively
         </div>
 <br>
         <div class="row">
-            <div class="col-md-6 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Application 1: Body-Head for Accurate Crowd Counting
                 </h3>
                 <video class="video" width=100% id="xyComparing" loop playsinline autoplay muted src="img/SCUTHeadDet_demo.mp4" onplay="resizeAndPlay(this)"></video>
-                <canvas width=100% class="videoMerge" id="xyComparingMerge"></canvas>
+                <canvas height=0 class="videoMerge" id="xyComparingMerge"></canvas>
                 <p class="text-justify">
                     Through the joint detection of human body and head, false detections of single-object detectors are eliminated, and accurate detection and counting of crowded persons are achieved without retraining. The detection effect is robust and can automatically adapt to unfamiliar scenes and various closed environments, including classrooms, conference rooms, shopping malls, etc. The used images are all from the dataset <a href="https://github.com/HCIILAB/SCUT-HEAD-Dataset-Release">SCUT-HEAD PartB</a>
                 </p>
