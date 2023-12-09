@@ -48,9 +48,9 @@
                 <small>
                 Arxiv 2023 (submitted to TPAMI)
                 </small></br>
-                <tiny>
-                The conference verison "Body-Part Joint Detection and Association via Extended Object Representation" has obtained the "ICME 2023 Best Student Paper Runner Up Award"
-                </tiny>
+                <small><small>
+                The conference verison named "Body-Part Joint Detection and Association via Extended Object Representation" has obtained the "ICME 2023 Best Student Paper Runner Up Award"
+                </small></small>
             </h2>
         </div>
         <div class="row">
@@ -176,7 +176,7 @@ Detection of human body and its parts (e.g., head or hands) has been intensively
                     Application 1: Body-Head for Accurate Crowd Counting
                 </h3>
                 <video class="video" width=100% id="xyComparing" loop playsinline autoplay muted src="img/SCUTHeadDet_demo.mp4" onplay="resizeAndPlay(this)"></video>
-                <canvas height=0 class="videoMerge" id="xyComparingMerge"></canvas>
+                <canvas width=100% class="videoMerge" id="xyComparingMerge"></canvas>
                 <p class="text-justify">
                     Through the joint detection of human body and head, false detections of single-object detectors are eliminated, and accurate detection and counting of crowded persons are achieved without retraining. The detection effect is robust and can automatically adapt to unfamiliar scenes and various closed environments, including classrooms, conference rooms, shopping malls, etc. The used images are all from the dataset <a href="https://github.com/HCIILAB/SCUT-HEAD-Dataset-Release">SCUT-HEAD PartB</a>
                 </p>
@@ -188,7 +188,7 @@ Detection of human body and its parts (e.g., head or hands) has been intensively
                 <h3>
                     Application 2: Body-Hand for Hand Contact Estimation
                 </h3>
-                <image src="img/ContactHands.jpg" align="center" width=50% class="img-responsive" alt="overview"><br>
+                <image src="img/ContactHands.jpg" width=50% class="center" alt="overview"><br>
                 <p class="text-justify">
                     The purpose of this task is to detect human hands in a natural state and estimate their physical contact status, which is divided into the following four categories: ① No-Contact: the hand is not in contact with any object; ② Self-Contact: The hand comes into contact with certain parts of the human body itself; ③ Contact with others (Person-Contact): the hand comes into contact with other human body parts that are not the person's own; ④ Contact with the object (Object-Contact): the hand comes into contact with non-human body objects. And the state of the hand may be a superposition of the above categories. For example, someone's hand can be holding an object while touching another person. Human hand contact state estimation can be used to support a variety of applications, such as harassment detection, pollution prevention, behavior recognition or AR/VR, etc. More details can be found in <a href="https://vision.cs.stonybrook.edu/~supreeth/ContactHands_data_website/">ContactHands(NIPS2020) Detecting Hands and Recognizing Physical Contact in the Wild</a>
                 </p>
