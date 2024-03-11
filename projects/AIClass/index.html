@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>AIClass</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://hnuzhy.github.io/projects/AIClass/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hnuzhy.github.io/projects/AIClass/"/>
+    <meta property="og:title" content="AIClass: Automatic Teaching Assistance System Towards Classrooms for K-12 Education" />
+    <meta property="og:description" content="Over the past decades, tremendous human and financial resources have been inputted into K-12 education. In order to understand whether such investment has improved the quality and efficiency of the education, we should first solve a core problem: how to quantitatively and qualitatively assess the teaching quality. Unfortunately, up to now, this problem still highly depends on feedbacks of domain experts, which is expensive and unscalable. In this paper, we propose an automatic teaching assistance system, called AIClass, by detecting and recognizing multiple characteristics during the class, including emotion states, speech analysis, action recognition, and position tracking. AIClass not only tracks and observes the teaching styles, but also comprehensively grasps the learning states of students. These structured analysis results could be mapped into the current curriculum observation schemes, and further realize the automatic and large-scale teaching assessment. It should be emphasized that the techniques used in AIClass are not the existing algorithms but creatively proposed to tackle the main challenges in real classroom environment. Experimental results demonstrate the effectiveness and efficiency of the proposed algorithms and AIClass system. In the future, we will further correlate features extracted from classrooms, and build a more intelligent teaching assistance system."/>
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>AIClass</b>: Automatic Teaching Assistance System Towards Classrooms for K-12 Education</br> 
+                <small>
+                A Practical Project from 2017 to 2023
+                </small></br>
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <video id="v0" width="100%" autoplay loop muted controls>
+                <source src="img/teaser.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Introduction
+                </h3>
+                <p class="text-justify">
+Over the past decades, tremendous human and financial resources have been inputted into K-12 education. In order to understand whether such investment has improved the quality and efficiency of the education, we should first solve a core problem: how to quantitatively and qualitatively assess the teaching quality. Unfortunately, up to now, this problem still highly depends on feedbacks of domain experts, which is expensive and unscalable. In this paper, we propose an automatic teaching assistance system, called AIClass, by detecting and recognizing multiple characteristics during the class, including emotion states, speech analysis, action recognition, and position tracking. AIClass not only tracks and observes the teaching styles, but also comprehensively grasps the learning states of students. These structured analysis results could be mapped into the current curriculum observation schemes, and further realize the automatic and large-scale teaching assessment. It should be emphasized that the techniques used in AIClass are not the existing algorithms but creatively proposed to tackle the main challenges in real classroom environment. Experimental results demonstrate the effectiveness and efficiency of the proposed algorithms and AIClass system. In the future, we will further correlate features extracted from classrooms, and build a more intelligent teaching assistance system.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    (1) Framework Overview
+                </h3>
+                <p style="text-align:center;"><image src="img/figure1r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    Summary of the <strong>four modules</strong> and their partial contents in AIClass system.
+                </p>
+                <p style="text-align:center;"><image src="img/figure2r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    The system architecture of AIClass, which fully demonstrates the related components, vital details and processing flow, etc. Some logos are from official websites. Virtual icons are downloaded from the website https://www.flaticon.com/ freely.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    (2) System Equipment
+                </h3>
+                <p style="text-align:center;"><image src="img/figure3r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    <strong>Left:</strong> Students captured by the frontend camera are having class in one ordinary classroom. In the red circle is the backend camera for the teacher. Faces are masked to protect privacy. <strong>Right:</strong> This picture is taken by the backend camera appearing in the left picture. The frontend camera is in the red circle. <strong>Center:</strong> We recommend installing hemispherical networked cameras with a resolution of 1K or 4K. In addition, some independent cameras need external pickup devices to collect voice.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    (3) Algorithms and Results
+                </h3>
+                <p style="text-align:center;"><image src="img/figure5.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    The processing flow of all algorithms. We take our self-made datasets about audio and video of both teachers and students as inputs. Then, we will borrow off-the-shelf algorithms or rely on self-invented new methods to generate multiple solutions. The outputs are all basic features embedded in AIClass system.
+                </p>
+                <p style="text-align:center;"><image src="img/figure4.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    An example of <strong>voice parsing</strong> using software <a href="http://www.praat.org/">Praat</a>. Please focus on the pitch, intensity and syllable nuclei. Other more abundant phonetic features are auxiliary information when annotation.
+                </p>
+                <p style="text-align:center;"><image src="img/figure6r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    Three examples of student <strong>behavior detection</strong> results. Yellow boxes are <strong>hand-raisings</strong>. The green, cyan and red boxes are <strong>standing</strong>, <strong>sleeping</strong> and <strong>yawning</strong>, respectively. Faces are masked to protect privacy.
+                </p>
+                <p style="text-align:center;"><image src="img/figure7r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    The demonstration of some algorithm results related to students. It includes <strong>pose estimation</strong>, <strong>behavior matching</strong> and <strong>student location</strong>. The four point block diagrams on the right are flows of the student location algorithm. In the left, the final row and column numbers of students are drawn on their representative points in black with the format of <em>RxCy</em>. Faces are masked to protect privacy.
+                </p>
+                <p style="text-align:center;"><image src="img/figure8r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    <strong>Head pose estimation</strong> qualitative results in two classrooms. Most of the faces or heads are well oriented. Faces enclosed by yellow solid circles are deserted difficult samples with low resolution or partial occlusion. Cubes with yellow dotted circles are all failures close to the backend.
+                </p>
+                <p style="text-align:center;"><image src="img/figure9r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    Hard examples of <strong>hand-raising matching</strong> in real classroom. Skeletons are detected by the improved OpenPose. All poses have missing or false detected arm joints. The middle two samples are left hand-raisings. The right two samples are visually prone confusion. Faces are masked to protect privacy.
+                </p>
+                <p style="text-align:center;"><image src="img/figure10r.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    A series of qualitative detection and recognition examples related to the teacher algorithms. <em>Bottom Right:</em> One tracklet of teacher tracking and the teacher’s walking trajectory based on his or her position and projection transformation.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    (3) Teaching Observation Methods
+                </h3>
+                <p style="text-align:center;"><image src="img/Flander.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    The matrix analysis of <strong>FIAS</strong> (<em>Ned A Flanders. 1963. Intent, action and feedback: A preparation for teaching. Journal of Teacher Education</em>).
+                </p>
+                <p style="text-align:center;"><image src="img/S-T_Analysis.png" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    The <strong>S-T analysis</strong> results of an example course. The subimage on the left is the S-T curve formed throughout the course. The right subimage is the Rt-Ch diagram with a red dot falling on the lecturing type area.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Declarations
+                </h3>
+                <p class="text-justify">
+                The images introduced on this website regarding the AIClass project are not allowed to be reproduced or used without authorization, and violators will be held accountable.
+                    <br><br>
+                The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
