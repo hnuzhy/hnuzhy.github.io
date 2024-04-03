@@ -1,7 +1,7 @@
 # My Personal Projects
 
 * [**SemiUHPE(arxiv'2024.04)** Semi-Supervised Unconstrained Head Pose Estimation in the Wild](https://hnuzhy.github.io/projects/SemiUHPE)
-* 
+
 * [**BPJDetPlus(TPAMI'2024)** BPJDet: Extended Object Representation for Generic Body-Part Joint Detection](https://hnuzhy.github.io/projects/BPJDet)
 
 * [**BPJDet(ICME'2023)** Body-Part Joint Detection and Association via Extended Object Representation](https://hnuzhy.github.io/projects/BPJDet)
