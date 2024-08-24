@@ -61,15 +61,27 @@
                 <ul class="list-inline">
                     <li>
                         <a href="https://hnuzhy.github.io">Huayi Zhou</a>
-                        </br>Shanghai Jiao Tong University (SJTU)
+                        </br> The Chinese University of Hong Kong, Shenzhen
                     </li>
                     <li>
                         <a href="https://scholar.google.com/citations?user=EiYbuesAAAAJ&hl=en">Fei Jiang</a>
-                        </br>Chongqing Academy of Science and Technology
+                        </br> Chongqing Academy of Science and Technology
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=S1JGPCMAAAAJ&hl=en">Jin Yuan</a>
+                        </br> Lenovo Research
+                    </li>
+                    <li><br>
+                        <a href="https://scholar.google.com/citations?user=rCGsLtcAAAAJ&hl=en">Yong Rui</a>
+                        </br> Lenovo Research
                     </li>
                     <li>
                         <a href="https://www.cs.sjtu.edu.cn/PeopleDetail.aspx?id=95">Hongtao Lu</a>
                         </br> Shanghai Jiao Tong University (SJTU)
+                    </li>
+                    <li>
+                        <a href="http://kuijia.site/">Kui Jia</a>
+                        </br> The Chinese University of Hong Kong, Shenzhen
                     </li>
                 </ul>
             </div>
@@ -140,7 +152,7 @@
                 </h3>
                 <image src="img/framework.png" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
-Existing head pose estimation datasets are either composed of numerous samples by non-realistic synthesis or lab collection, or limited images by labor-intensive annotating. This makes deep supervised learning based solutions compromised due to the reliance on generous labeled data. To alleviate it, we propose the first semi-supervised unconstrained head pose estimation (SemiUHPE) method, which can leverage a large amount of unlabeled wild head images. Specifically, we follow the recent semi-supervised rotation regression, and focus on the diverse and complex head pose domain. Firstly, we claim that the aspect-ratio invariant cropping of heads is superior to the previous landmark-based affine alignment, which does not fit unlabeled natural heads or practical applications where landmarks are often unavailable. Then, instead of using an empirically fixed threshold to filter out pseudo labels, we propose the dynamic entropy-based filtering by updating thresholds for adaptively removing unlabeled outliers. Moreover, we revisit the design of weak-strong augmentations, and further exploit its superiority by devising two novel head-oriented strong augmentations named pose-irrelevant cut-occlusion and pose-altering rotation consistency. Extensive experiments show that SemiUHPE can surpass SOTAs with remarkable improvements on public benchmarks under both front-range and full-range.
+Existing research on unconstrained in-the-wild head pose estimation suffers from the flaws of its datasets, which consist of either numerous samples by non-realistic synthesis or constrained collection, or small-scale natural images yet with plausible manual annotations. To alleviate it, we propose the first semi-supervised unconstrained head pose estimation method SemiUHPE, which can leverage abundant easily available unlabeled head images. Technically, we choose semi-supervised rotation regression and adapt it to the error-sensitive and label-scarce problem of unconstrained head pose. Our method is based on the observation that the aspect-ratio invariant cropping of wild heads is superior to the previous landmark-based affine alignment given that landmarks of unconstrained human heads are usually unavailable, especially for less-explored non-frontal heads. Instead of using an empirically fixed threshold to filter out pseudo labeled heads, we propose dynamic entropy based filtering to adaptively remove unlabeled outliers as training progresses by updating the threshold in multiple stages. We then revisit the design of weak-strong augmentations and improve it by devising two novel head-oriented strong augmentations, termed pose-irrelevant cut-occlusion and pose-altering rotation consistency respectively. Extensive experiments and ablation studies show that SemiUHPE outperforms existing methods greatly on public benchmarks under both the front-range and full-range settings.
                 </p>
             </div>
         </div>
@@ -273,7 +285,7 @@ Existing head pose estimation datasets are either composed of numerous samples b
                     <textarea id="bibtex" class="form-control" readonly>
 @article{zhou2024semi,
   title={Semi-Supervised Unconstrained Head Pose Estimation in the Wild},
-  author={Zhou, Huayi and Jiang, Fei and Lu, Hongtao},
+  author={Zhou, Huayi and Jiang, Fei and Jin, Yuan and Yong, Rui and Lu, Hongtao and Kui, Jia},
   journal={arXiv preprint arXiv:2404.02544},
   year={2024}
 }
