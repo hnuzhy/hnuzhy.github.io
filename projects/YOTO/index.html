@@ -1,1 +1,306 @@
-hahaha
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>YOTO</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://hnuzhy.github.io/projects/BPJDet/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hnuzhy.github.io/projects/YOTO/"/>
+    <meta property="og:title" content="You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations" />
+    <meta property="og:description" content="Bimanual robotic manipulation is a long-standing challenge of embodied intelligence due to its characteristics of dual-arm spatial-temporal coordination and high-dimensional action spaces. Previous studies rely on pre-defined action taxonomies or direct teleoperation to alleviate or circumvent these issues, often making them lack simplicity, versatility and scalability. Differently, we believe that the most effective and efficient way for teaching bimanual manipulation is learning from human demonstrated videos, where rich features such as spatial-temporal positions, dynamic postures, interaction states and dexterous transitions are available almost for free. In this work, we propose the YOTO (You Only Teach Once), which can extract and then inject patterns of bimanual actions from as few as a single binocular observation of hand movements, and teach dual robot arms various complex tasks. Furthermore, based on keyframes-based motion trajectories, we devise a subtle solution for rapidly generating training demonstrations with diverse variations of manipulated objects and their locations. These data can then be used to learn a customized bimanual diffusion policy (BiDP) across diverse scenes. In experiments, YOTO achieves impressive performance in mimicking 5 intricate long-horizon bimanual tasks, possesses strong generalization under different visual and spatial conditions, and outperforms existing visuomotor imitation learning methods in accuracy and efficiency."/>
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>YOTO</b>: You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations</br> 
+                <small>
+                Arxiv 2025.01 (under review)
+                </small></br>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://hnuzhy.github.io">Huayi Zhou</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen
+                    </li>
+                    <li>
+                        <a href="https://openreview.net/profile?id=~Ruixiang_Wang3">Ruixiang Wang</a>
+                        </br>Harbin Institute of Technology
+                    </li>
+                    <li>
+                        <a href="https://openreview.net/profile?id=~Yunxin_Tai2">Yunxin Tai</a>
+                        </br>DexForce, Shenzhen
+                    </li>
+                    <li><br>
+                        <a href="https://github.com/yuecideng">Yueci Deng</a>
+                        </br>DexForce, Shenzhen
+                    </li>
+                    <li>
+                        <a href="http://guiliang.me/">Guiliang Liu</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen
+                    </li>
+                    <li>
+                        <a href="http://kuijia.site">Kui Jia</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2501.xxxxx">
+                            <image src="img/paper.png" height="50px">
+                                <h4><strong>arXiv</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://huggingface.co/HoyerChou/YOTO">
+                            <image src="img/github.png" height="50px">
+                                <h4><strong>Dataset</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/hnuzhy/YOTO">
+                            <image src="img/github.png" height="50px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+		<!--
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <video id="v0" width="100%" autoplay loop muted controls>
+		  <source src="video/teaser.mp4" type="video/mp4" />
+                </video>
+	    </div>
+        </div>
+		-->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Bimanual robotic manipulation is a long-standing challenge of embodied intelligence due to its characteristics of dual-arm spatial-temporal coordination and high-dimensional action spaces. Previous studies rely on pre-defined action taxonomies or direct teleoperation to alleviate or circumvent these issues, often making them lack simplicity, versatility and scalability. Differently, we believe that the most effective and efficient way for teaching bimanual manipulation is learning from human demonstrated videos, where rich features such as spatial-temporal positions, dynamic postures, interaction states and dexterous transitions are available almost for free. In this work, we propose the YOTO (You Only Teach Once), which can extract and then inject patterns of bimanual actions from as few as a single binocular observation of hand movements, and teach dual robot arms various complex tasks. Furthermore, based on keyframes-based motion trajectories, we devise a subtle solution for rapidly generating training demonstrations with diverse variations of manipulated objects and their locations. These data can then be used to learn a customized bimanual diffusion policy (BiDP) across diverse scenes. In experiments, YOTO achieves impressive performance in mimicking 5 intricate long-horizon bimanual tasks, possesses strong generalization under different visual and spatial conditions, and outperforms existing visuomotor imitation learning methods in accuracy and efficiency.
+                </p>
+				<image src="img/teaser.png" class="img-responsive" alt="overview"><br>
+                <image src="img/framework.png" class="img-responsive" alt="overview"><br>
+            </div>
+        </div>
+
+
+        <div class="row">
+    		<div class="col-md-8 col-md-offset-2">
+				<h3>
+                    ▶ Hand Motion Extraction and Injection
+                </h3>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: center;">Pull Drawer</td>
+						<td style="text-align: center;">Pour Water</td>
+						<td style="text-align: center;">Unscrew Bottle</td>
+						<td style="text-align: center;">Uncover Lid</td>
+						<td style="text-align: center;">Open Box</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t1_drawer_raw.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t2_pouring_raw.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t3_unscrew_raw.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t4_uncover_raw.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t5_openbox_raw.mp4" type="video/mp4" />
+						</video>
+						</td>				
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t1_drawer_vis.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t2_pouring_vis.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t3_unscrew_vis.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t4_uncover_vis.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t5_openbox_vis.mp4" type="video/mp4" />
+						</video>
+						</td>				
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t1_drawer_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t2_pouring_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t3_unscrew_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t4_uncover_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="100%" autoplay loop muted>
+						  <source src="video/t5_openbox_robot.mp4" type="video/mp4" />
+						</video>
+						</td>				
+					</tr>
+				</table>
+			</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    ▶ Auto-Rollout Verification in Real-World
+                </h3>
+                <p class="text-justify">
+                    Based on the one-shot teaching, we propose two demonstration proliferation schemes, the automatic rollout verification of real robots and point cloud-level geometry augmentation of manipulated objects. This solution is an efficient and reliable route to quickly produce training data for imitation learning. Below is the example showing how to conduct the automatic rollout verification.</a>
+                </p>
+				<video id="v0" width="100%" autoplay loop muted controls>
+					<source src="video/YOTO_Auto-Rollout_Verification.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+           
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    ▶ Qualitative Evaluation Results of BiDP
+                </h3>
+                <p style="text-align:center;"><image src="img/ContactHands.jpg" width=50% alt="overview"></p><br>
+                <p class="text-justify">
+                    We show qualitative rollout samples from the third-person perspective for all evaluation tasks we mentioned in the main paper. We can observe our model’s generalization to object category and location variations. These examples show more complete scenes and the motion of two robot arms, and can be considered as a supplement to the limited field of view of the binocular observation camera. Note that these third-person video recordings do not participate in any training and testing.</a>
+                </p>
+				<video id="v0" width="100%" autoplay loop muted controls>
+					<source src="video/eval_drawer.mp4" type="video/mp4" />
+                </video>
+				<video id="v0" width="100%" autoplay loop muted controls>
+					<source src="video/eval_pouring.mp4" type="video/mp4" />
+                </video>
+				<video id="v0" width="100%" autoplay loop muted controls>
+					<source src="video/eval_unscrew.mp4" type="video/mp4" />
+                </video>
+				<video id="v0" width="100%" autoplay loop muted controls>
+					<source src="video/eval_uncover.mp4" type="video/mp4" />
+                </video>
+				<video id="v0" width="100%" autoplay loop muted controls>
+					<source src="video/eval_openbox.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{zhou2025you,
+  title={You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations},
+  author={Huayi Zhou, Ruixiang Wang, Yunxin Tai, Yueci Deng, Guiliang Liu, Kui Jia},
+  journal={arXiv preprint arXiv:2501.xxxxx},
+  year={2025}
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                We acknowledge the providers of various hardware used in this project, including the <a href="https://www.aubo-cobot.com/public/i5product3">Aubo-i5 robotic arm</a>, <a href="https://en.dh-robotics.com/product/pgi">DH gripper PGI-80-80</a>, and <a href="https://dexforce-3dvision.com/productinfo/1022811.html">kingfisher binocular camera</a>. 
+                    <br><br>
+                The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
