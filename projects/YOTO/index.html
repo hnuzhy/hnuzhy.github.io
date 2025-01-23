@@ -107,32 +107,49 @@
                 </div>
         </div>
 
-		<!--
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+			<!--
                 <video id="v0" width="100%" autoplay loop muted controls>
-		  <source src="video/teaser.mp4" type="video/mp4" />
+				<source src="video/teaser.mp4" type="video/mp4" />
                 </video>
-	    </div>
+			-->
+			<image src="img/teaser.png" class="img-responsive" alt="overview"><br>
+			</div>
         </div>
-		-->
+		
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Abstract
                 </h3>
-		<image src="img/teaser.png" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
 Bimanual robotic manipulation is a long-standing challenge of embodied intelligence due to its characteristics of dual-arm spatial-temporal coordination and high-dimensional action spaces. Previous studies rely on pre-defined action taxonomies or direct teleoperation to alleviate or circumvent these issues, often making them lack simplicity, versatility and scalability. Differently, we believe that the most effective and efficient way for teaching bimanual manipulation is learning from human demonstrated videos, where rich features such as spatial-temporal positions, dynamic postures, interaction states and dexterous transitions are available almost for free. In this work, we propose the YOTO (You Only Teach Once), which can extract and then inject patterns of bimanual actions from as few as a single binocular observation of hand movements, and teach dual robot arms various complex tasks. Furthermore, based on keyframes-based motion trajectories, we devise a subtle solution for rapidly generating training demonstrations with diverse variations of manipulated objects and their locations. These data can then be used to learn a customized bimanual diffusion policy (BiDP) across diverse scenes. In experiments, YOTO achieves impressive performance in mimicking 5 intricate long-horizon bimanual tasks, possesses strong generalization under different visual and spatial conditions, and outperforms existing visuomotor imitation learning methods in accuracy and efficiency.
                 </p>
-                <image src="img/framework.png" class="img-responsive" alt="overview"><br>
             </div>
         </div>
 
 
         <div class="row">
-    		<div class="col-md-8 col-md-offset-1">
+    		<div class="col-md-8 col-md-offset-2">
+				<h3>
+                    ▶ Overall Framework of Our YOTO
+                </h3>
+				<image src="img/framework.png" class="img-responsive" alt="overview"><br>
+			</div>
+        </div>
+
+        <div class="row">
+    		<div class="col-md-8 col-md-offset-2">
+				<h3>
+                    ▶ Hand Motion Extraction and Injection
+                </h3>
+			</div>
+        </div>
+		
+        <div class="row">
+    		<div class="col-md-8 col-md-offset-1">	
 				<h3>
                     ▶ Hand Motion Extraction and Injection
                 </h3>
@@ -276,12 +293,12 @@ Bimanual robotic manipulation is a long-standing challenge of embodied intellige
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@article{zhou2025you,
-  title={You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations},
-  author={Huayi Zhou, Ruixiang Wang, Yunxin Tai, Yueci Deng, Guiliang Liu, Kui Jia},
-  journal={arXiv preprint arXiv:2501.xxxxx},
-  year={2025}
-}
+					@article{zhou2025you,
+					  title={You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations},
+					  author={Huayi Zhou, Ruixiang Wang, Yunxin Tai, Yueci Deng, Guiliang Liu, Kui Jia},
+					  journal={arXiv preprint arXiv:2501.xxxxx},
+					  year={2025}
+					}
                     </textarea>
                 </div>
             </div>
