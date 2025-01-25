@@ -149,9 +149,15 @@ Bimanual robotic manipulation is a long-standing challenge of embodied intellige
 
         <div class="row">
     		<div class="col-md-8 col-md-offset-2">	
-				<h3>
+		<h3>
                     ▶ Hand Motion Extraction and Injection
                 </h3>
+                <p class="text-justify">
+		We focus on understanding human hands, including their location, left-rightness, 3D shape, joints, pose, contact, and open/closed state. These features can be perceived using hand-related vision methods. After extracting hand motion trajectories, we do not simply inject step-wise actions into robots, but choose to simplify the consecutive trajectory into discrete keyframes, and assign the corresponding keyposes to two arms to execute by applying inverse kinematics interpolation. Besides, we also record and replay the order of dual-hand movements (termed as <strong>motion mask</strong>), which can help to address the dual-arm coordination issue in long-horizon bimanual tasks. Now, we successfully obtain a stable and refined manipulation motion exemplar.</a>
+                </p>
+                <p class="text-justify">
+		Below, we show illustrations of five major bimanual tasks, including <strong>pull drawer</strong>, <strong>pour water</strong>, <strong>unscrew bottle</strong>, <strong>uncover lid</strong> and <strong>open box</strong>. Another two new bimanual tasks <strong>reorient pen</strong> and <strong>flip basket</strong> are also demonstrated.</a>
+		</p>
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr><td style="text-align: left;">Pull Drawer</td></tr>
 					<tr>
@@ -267,8 +273,11 @@ Bimanual robotic manipulation is a long-standing challenge of embodied intellige
                 <h3>
                     ▶ Qualitative Evaluation Results of BiDP
                 </h3>
+		<p class="text-justify">
+		We evaluate YOTO on five real-world bimanual tasks, including <strong>pull drawer</strong>, <strong>pour water</strong>, <strong>unscrew bottle</strong>, <strong>uncover lid</strong> and <strong>open box</strong>. These tasks collectively encompass two types of dual-arm collaborations: strictly asynchronous and synchronous. The manipulated objects in these tasks might be rigid, articulated, deformable or non-prehensile. They also involve many primitive skills such as pull/push, pick/place, re-orient, unscrew, revolve and lift up. Some skills must require both arms to complete. More importantly, all tasks are long-horizon, indicating that they are quite complex due to containing multiple substeps. </a>
+                </p>
                 <p class="text-justify">
-                    We show qualitative rollout samples from the third-person perspective for all evaluation tasks we mentioned in the main paper. We can observe our model’s generalization to object category and location variations. These examples show more complete scenes and the motion of two robot arms, and can be considered as a supplement to the limited field of view of the binocular observation camera. Note that these third-person video recordings do not participate in any training and testing.</a>
+                Below, we show qualitative rollout samples from the third-person perspective for all evaluation tasks we mentioned in the main paper. We can observe our model’s generalization to object category and location variations. These examples show more complete scenes and the motion of two robot arms, and can be considered as a supplement to the limited field of view of the binocular observation camera. Note that these third-person video recordings do not participate in any training and testing.</a>
                 </p>
 				<tr><td style="text-align: center;">Pull Drawer</td></tr>
 				<video id="v0" width="100%" autoplay loop muted>
