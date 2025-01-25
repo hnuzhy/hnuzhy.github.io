@@ -156,7 +156,7 @@ Bimanual robotic manipulation is a long-standing challenge of embodied intellige
 		We focus on understanding human hands, including their location, left-rightness, 3D shape, joints, pose, contact, and open/closed state. These features can be perceived using hand-related vision methods. After extracting hand motion trajectories, we do not simply inject step-wise actions into robots, but choose to simplify the consecutive trajectory into discrete keyframes, and assign the corresponding keyposes to two arms to execute by applying inverse kinematics interpolation. Besides, we also record and replay the order of dual-hand movements (termed as <strong>motion mask</strong>), which can help to address the dual-arm coordination issue in long-horizon bimanual tasks. Now, we successfully obtain a stable and refined manipulation motion exemplar.</a>
                 </p>
                 <p class="text-justify">
-		Below, we show illustrations of five major bimanual tasks, including <strong>pull drawer</strong>, <strong>pour water</strong>, <strong>unscrew bottle</strong>, <strong>uncover lid</strong> and <strong>open box</strong>. Another two new bimanual tasks <strong>reorient pen</strong> and <strong>flip basket</strong> are also demonstrated.</a>
+		Below is illustrations of five major bimanual tasks: <strong>pull drawer</strong>, <strong>pour water</strong>, <strong>unscrew bottle</strong>, <strong>uncover lid</strong> and <strong>open box</strong>.</a>
 		</p>
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr><td style="text-align: left;">Pull Drawer</td></tr>
@@ -246,6 +246,47 @@ Bimanual robotic manipulation is a long-standing challenge of embodied intellige
 						<td style="text-align: right;">
 						<video id="v0" width="240px" autoplay loop muted>
 						  <source src="video/t5_openbox_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+                		<p class="text-justify">
+				Another two new bimanual tasks <strong>reorient pen</strong> and <strong>flip basket</strong> are also demonstrated.</a>
+				</p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;">Reorient pen</td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="240px" autoplay loop muted>
+						  <source src="video/t6_redirect_raw_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="240px" autoplay loop muted>
+						  <source src="video/t6_redirect_vis_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="240px" autoplay loop muted>
+						  <source src="video/t6_redirect_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">Flip Basket</td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="240px" autoplay loop muted>
+						  <source src="video/t7_invert_raw_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="240px" autoplay loop muted>
+						  <source src="video/t7_invert_vis_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="240px" autoplay loop muted>
+						  <source src="video/t7_invert_raw_robot.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
