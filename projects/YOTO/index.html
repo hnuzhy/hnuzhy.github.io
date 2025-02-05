@@ -301,7 +301,7 @@ Bimanual robotic manipulation is a long-standing challenge of embodied intellige
                     Based on the one-shot teaching, we propose two demonstration proliferation schemes, the automatic rollout verification of real robots and point cloud-level geometry augmentation of manipulated objects. This solution is an efficient and reliable route to quickly produce training data for imitation learning. Below is the example showing how to conduct the automatic rollout verification (including category variations and location variations).</a>
                 </p>
                 <p class="text-justify">
-                    Below, we show qualitative rollout samples from the third-person perspective for all evaluation tasks we mentioned in the main paper. We can observe our model’s generalization to object category and location variations. These examples show more complete scenes and the motion of two robot arms, and can be considered as a supplement to the limited field of view of the binocular observation camera. Note that these third-person video recordings do not participate in any training and testing.</a>
+		    Before that, when doing the automatic rollout verification, we claim that all manipulated objects can replaced with similar shapes in the same position to expand category diversity. Therefore, we collected a variety of manipulated objects in instance-level for each of five bimanual tasks to improve and verify the generalizability of trained policies. All of these objects are from everyday life, not intentionally customized.</a>
                 </p>
 				<image src="img/assets.png" class="img-responsive" alt="overview"><br>
 				<table style="width: 100%; border-collapse: collapse;">
