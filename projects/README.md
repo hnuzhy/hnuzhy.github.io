@@ -1,6 +1,6 @@
 # My Personal Projects
 
-* [**YOTO(arxiv 2025.01)** You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations](https://hnuzhy.github.io/projects/YOTO)
+* [**YOTO(RSS 2025)** You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations](https://hnuzhy.github.io/projects/YOTO)
 
 * [**SemiUHPE(arxiv 2024.04)** Semi-Supervised Unconstrained Head Pose Estimation in the Wild](https://hnuzhy.github.io/projects/SemiUHPE)
 
