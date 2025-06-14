@@ -1,6 +1,6 @@
 # My Personal Projects
 
-* [**YOTOPlus(arXiv 2025.06)** You Only Teach Once: One-Shot Bimanual Robotic Manipulation Inspired by Hand Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
+* [**YOTOPlus(arXiv 2025.06)** You Only Teach Once: One-Shot Bimanual Robotic Manipulation Inspired by Hand Demonstrations](https://hnuzhy.github.io/projects/YOTO)
 
 * [**YOTO(RSS 2025)** You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations](https://hnuzhy.github.io/projects/YOTO)
 
