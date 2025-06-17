@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>YOTOPlus</title>
+    <title>YOTO++</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
     <meta property="og:image:height" content="840">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hnuzhy.github.io/projects/YOTOPlus/"/>
-    <meta property="og:title" content="You Only Teach Once: One-Shot Bimanual Robotic Manipulation Inspired by Hand Demonstrations" />
-    <meta property="og:description" content="Bimanual robotic manipulation remains a fundamental challenge due to the inherent complexity of dual-arm coordination and high-dimensional action spaces. This paper presents the YOTO (You Only Teach Once), which is a unified one-shot learning framework for teaching bimanual skills directly from third-person human video demonstrations. Our method extracts structured 3D hand motions using binocular vision and distills them into compact, keyframe-based trajectories for dual-arm execution. We develop a scalable demonstration proliferation strategy that synthetically augments one-shot demonstrations into diverse training samples, enabling effective learning of a customized bimanual diffusion policy. Extensive evaluations across a broad spectrum of long-horizon bimanual tasks (including asynchronous, synchronous, contact-rich, and non-prehensile scenarios), demonstrate strong generalization to novel skills and objects. We further introduce a visual alignment mechanism at the initial grasping stage for closed-loop control, enabling the system to dynamically adapt to perturbations during execution. Moreover, we validate the framework on a new dual-arm robotic platform to show seamless cross-embodiment transfer without additional retraining. YOTO achieves impressive performance in accuracy, robustness, and scalability, advancing the practical deployment of general-purpose bimanual manipulation systems."/>
+    <meta property="og:title" content="YOTO++: Learning Closed-Loop Bimanual Manipulation from One-Shot Video Demonstrations" />
+    <meta property="og:description" content="Bimanual robotic manipulation remains a fundamental challenge due to the inherent complexity of dual-arm coordination and high-dimensional action spaces. This paper presents YOTO++, which extends the YOTO (You Only Teach Once) into a unified one-shot learning framework for teaching bimanual skills directly from third-person human video demonstrations. Our method extracts structured 3D hand motions using binocular vision and distills them into compact, keyframe-based trajectories for dual-arm execution. We develop a scalable demonstration proliferation strategy that synthetically augments one-shot demonstrations into diverse training samples, enabling effective learning of a customized bimanual diffusion policy. Extensive evaluations across a broad spectrum of long-horizon bimanual tasks, including asynchronous, synchronous, contact-rich, and non-prehensile scenarios, demonstrate strong generalization to novel skills and objects. We further introduce a visual alignment mechanism at the initial manipulation stage for closed-loop control, enabling the system to dynamically adapt to perturbations during execution. We validate the framework on a new dual-arm robotic platform to show seamless cross-embodiment transfer without additional retraining. YOTO++ achieves impressive performance in accuracy, robustness, and scalability, advancing the practical deployment of general-purpose bimanual manipulation systems."/>
 
 
 
@@ -44,7 +44,7 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-12 text-center">
-                You Only Teach Once: One-Shot Bimanual Robotic Manipulation Inspired by Hand Demonstrations</br> 
+                YOTO++: Learning Closed-Loop Bimanual Manipulation from One-Shot Video Demonstrations</br> 
                 <small>
                 arXiv 2025.06 (an extended journal version of the conference paper <a href="https://hnuzhy.github.io/projects/YOTO">YOTO</a> in RSS'2025)
                 </small></br>
@@ -122,7 +122,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <p class="text-justify">
-                    Specifically, in this expansion, we have added new components to enhance its functionality and comprehensiveness. <strong>① First</strong>, we introduce three new bimanual manipulation tasks that encompass a broader range of primitive skills, thereby further validating the generalizability of the proposed framework. <strong>② Second</strong>, we extend YOTO to two additional long-horizon tasks involving tool use, demonstrating its ability to consistently extract and execute temporally coherent multi-stage actions. <strong>③ Third</strong>, we incorporate a vision-based alignment module during the initial grasping phase of each task, enabling closed-loop control to robustly handle dynamic disturbances. <strong>④ Lastly</strong>, we validate the cross-embodiment adaptability of YOTO by deploying it on a humanoid dual-arm robot, showcasing its platform-agnostic nature and real-world applicability across diverse robotic morphologies.</a>
+                    Specifically, in this expansion YOTO++, we have added several new components to enhance its functionality and comprehensiveness. <strong>① First</strong>, we incorporate a vision-based alignment module during the initial grasping phase of each task, enabling closed-loop control to robustly handle dynamic disturbances. <strong>② Second</strong>, we extend YOTO to two additional long-horizon tasks involving tool use, demonstrating its ability to consistently extract and execute temporally coherent multi-stage actions. <strong>③ Third</strong>, we introduce three new bimanual manipulation tasks that encompass a broader range of primitive skills, thereby further validating the generalizability of the proposed framework. <strong>④ Lastly</strong>, we validate the cross-embodiment adaptability of YOTO by deploying it on a humanoid dual-arm robot, showcasing its platform-agnostic nature and real-world applicability across diverse robotic morphologies.</a>
                 </p>
 				<image src="img/visResultsV2.jpg" class="img-responsive" alt="overview">
 			</div>
@@ -134,7 +134,7 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-					Bimanual robotic manipulation remains a fundamental challenge due to the inherent complexity of dual-arm coordination and high-dimensional action spaces. This paper presents the YOTO (You Only Teach Once), which is a unified one-shot learning framework for teaching bimanual skills directly from third-person human video demonstrations. Our method extracts structured 3D hand motions using binocular vision and distills them into compact, keyframe-based trajectories for dual-arm execution. We develop a scalable demonstration proliferation strategy that synthetically augments one-shot demonstrations into diverse training samples, enabling effective learning of a customized bimanual diffusion policy. Extensive evaluations across a broad spectrum of long-horizon bimanual tasks (including asynchronous, synchronous, contact-rich, and non-prehensile scenarios), demonstrate strong generalization to novel skills and objects. We further introduce a visual alignment mechanism at the initial grasping stage for closed-loop control, enabling the system to dynamically adapt to perturbations during execution. Moreover, we validate the framework on a new dual-arm robotic platform to show seamless cross-embodiment transfer without additional retraining. YOTO achieves impressive performance in accuracy, robustness, and scalability, advancing the practical deployment of general-purpose bimanual manipulation systems.
+					Bimanual robotic manipulation remains a fundamental challenge due to the inherent complexity of dual-arm coordination and high-dimensional action spaces. This paper presents YOTO++, which extends the YOTO (You Only Teach Once) into a unified one-shot learning framework for teaching bimanual skills directly from third-person human video demonstrations. Our method extracts structured 3D hand motions using binocular vision and distills them into compact, keyframe-based trajectories for dual-arm execution. We develop a scalable demonstration proliferation strategy that synthetically augments one-shot demonstrations into diverse training samples, enabling effective learning of a customized bimanual diffusion policy. Extensive evaluations across a broad spectrum of long-horizon bimanual tasks, including asynchronous, synchronous, contact-rich, and non-prehensile scenarios, demonstrate strong generalization to novel skills and objects. We further introduce a visual alignment mechanism at the initial manipulation stage for closed-loop control, enabling the system to dynamically adapt to perturbations during execution. We validate the framework on a new dual-arm robotic platform to show seamless cross-embodiment transfer without additional retraining. YOTO++ achieves impressive performance in accuracy, robustness, and scalability, advancing the practical deployment of general-purpose bimanual manipulation systems.
                 </p>
             </div>
         </div>
@@ -143,10 +143,10 @@
         <div class="row">
     		<div class="col-md-8 col-md-offset-2">
 				<h3>
-                    ▶ Details of Our Extended YOTO
+                    ▶ Details of Our Extended YOTO++
                 </h3>
                 <p class="text-justify">
-                    Our proposed YOTO (You Only Teach Once) enables cross-embodiment deployment (from the contralateral to humanoid dual-arm setups), and facilitates diverse bimanual tasks including asynchronous, synchronous and tool-using scenarios, with closed-loop control under dynamic disturbances during pre-grasping. Notably, YOTO needs only the one-shot observation of a third-person binocular camera to extract the fine-grained motion trajectory of human hands, which can then be utilized for the dual-arm coordinated action injection and rapid proliferation of training demonstrations.</a>
+                    Our proposed YOTO++ (You Only Teach Once) enables cross-embodiment deployment (from the contralateral to humanoid dual-arm setups), and facilitates diverse bimanual tasks including asynchronous, synchronous and tool-using scenarios, with closed-loop control under dynamic disturbances during pre-grasping. Notably, it needs only the one-shot observation of a third-person binocular camera to extract the fine-grained motion trajectory of human hands, which can then be utilized for the dual-arm coordinated action injection and rapid proliferation of training demonstrations.</a>
                 </p>
 				<image src="img/teaserV2.jpg" class="img-responsive" alt="overview"><br>
 				<p class="text-justify">
@@ -157,132 +157,51 @@
         </div>
 
 
+
         <div class="row">
-    		<div class="col-md-8 col-md-offset-2">	
-				<h3>
-                    ▶ ① Three New Bimanual Manipulation Tasks
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    ▶ ① Visual Alignment Enabling Closed-Loop Pre-Grasping
                 </h3>
+				<p class="text-justify">
+					We observe that once the target object has been securely grasped, the relative pose between the end-effector and object becomes fixed, reducing the necessity for high-frequency visual feedback. In this case, it is both safe and efficient to rely on either the initial demonstration-aligned keyframes or model-inferred trajectories for the subsequent execution. While, for the critical pre-grasping stage, disturbances in object can significantly impact the manipulation success during. To address this, we propose a lightweight visual alignment algorithm that enables closed-loop pre-grasping by aligning the current object pose with the initial demonstrated configuration.</a>
+                </p>
                 <p class="text-justify">
-					In addition to the five bimanual manipulation tasks mentioned previously in conference paper (including <strong>pull drawer</strong>, <strong>pour water</strong>, <strong>unscrew bottle</strong>, <strong>uncover lid</strong> and <strong>open box</strong>), we have added three new dual-arm atomic skills scuh as <strong>insert pen</strong>, <strong>reorient board</strong> and <strong>flip basket</strong>. Below are illustrations of them.</a>
-				</p>
+					Below is the example of dynamic interferences during the pre-grasping stage for tasks <strong>unscrew bottle</strong> (top row) and <strong>pour water</strong> (bottom row), where each object is manually disturbed with one, two or three times. The red arrow indicates the direction of the manually moved object (<strong>interfering</strong>). The cyan arrow and yellow arrow indicate the movement direction of the left and right robotic arms (<strong>chasing</strong>) respectively.</a>
+                </p>
+				<image src="img/dynamicRes.jpg" class="img-responsive" alt="overview"><br>
 				<table style="width: 100%; border-collapse: collapse;">
-					<tr><td style="text-align: left;">Insert Pen</td></tr>
+					<tr><td style="text-align: left;">Unscrew Bottle</td></tr>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn1_insert_raw_slim.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: center;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn1_insert_vis_slim.mp4" type="video/mp4" />
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/dynamicRes_unscrew1.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn1_insert_robot.mp4" type="video/mp4" />
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/dynamicRes_unscrew2.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
-					<tr><td style="text-align: left;">Reorient Board</td></tr>
-					<tr>
-						<td style="text-align: left;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn2_reorient_raw_slim.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: center;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn2_reorient_vis_slim.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: right;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn2_reorient_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-					</tr>
-					<tr><td style="text-align: left;">Flip Basket</td></tr>
-					<tr>
-						<td style="text-align: left;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn3_flipping_raw_slim.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: center;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn3_flipping_vis_slim.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: right;">
-						<video id="v0" width="245px" autoplay loop muted>
-						  <source src="video/tn3_flipping_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-					</tr>
-				</table>
-
-                <p class="text-justify">
-					Here we continue to show the real robot rollouts of the three newly added bimanual tasks on different new instances. Note that a new perspective camera is selected here to record videos of task <strong>reorient board</strong> due to unexpected circumstances in subsequent transportation and hardware updates.</a>
-				</p>
-				<table style="width: 100%; border-collapse: collapse;">
-					<tr><td style="text-align: left;">Insert Pen (new instances such as paired spoons / forks)</td></tr>
+					<tr><td style="text-align: left;">Pour Water</td></tr>
 					<tr>
 						<td style="text-align: left;">
 						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn1_insert(paired-spoons)_robot.mp4" type="video/mp4" />
+						  <source src="video/dynamicRes_pouring1.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
 						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn1_insert(paired-forks)_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-					</tr>
-
-					<tr><td style="text-align: left;">Reorient Board (new instances such as spoons / shovels)</td></tr>
-					<tr>
-						<td style="text-align: left;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn2_reorient(plastic-spoon)_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: right;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn2_reorient(metal-spoon)_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-					</tr>
-					<tr>
-						<td style="text-align: left;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn2_reorient(plastic-shovel)_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: right;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn2_reorient(metal-shovel)_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-					</tr>
-
-					<tr><td style="text-align: left;">Flip Basket (new instances such as white basket / gray pillow)</td></tr>
-					<tr>
-						<td style="text-align: left;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn3_flipping(white-basket)_robot.mp4" type="video/mp4" />
-						</video>
-						</td>
-						<td style="text-align: right;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/tn3_flipping(gray-pillow)_robot.mp4" type="video/mp4" />
+						  <source src="video/dynamicRes_pouring2.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
 				</table>
 				
-			</div>
+            </div>
         </div>
+
 
 
         <div class="row">
@@ -415,50 +334,135 @@
             </div>
         </div>
 
-
+		
+		
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    ▶ ③ Visual Alignment Enabling Closed-Loop Pre-Grasping
+    		<div class="col-md-8 col-md-offset-2">	
+				<h3>
+                    ▶ ③ Three New Bimanual Manipulation Tasks
                 </h3>
-				<p class="text-justify">
-					We observe that once the target object has been securely grasped, the relative pose between the end-effector and object becomes fixed, reducing the necessity for high-frequency visual feedback. In this case, it is both safe and efficient to rely on either the initial demonstration-aligned keyframes or model-inferred trajectories for the subsequent execution. While, for the critical pre-grasping stage, disturbances in object can significantly impact the manipulation success during. To address this, we propose a lightweight visual alignment algorithm that enables closed-loop pre-grasping by aligning the current object pose with the initial demonstrated configuration.</a>
-                </p>
                 <p class="text-justify">
-					Below is the example of dynamic interferences during the pre-grasping stage for tasks <strong>unscrew bottle</strong> (top row) and <strong>pour water</strong> (bottom row), where each object is manually disturbed with one, two or three times. The red arrow indicates the direction of the manually moved object (<strong>interfering</strong>). The cyan arrow and yellow arrow indicate the movement direction of the left and right robotic arms (<strong>chasing</strong>) respectively.</a>
-                </p>
-				<image src="img/dynamicRes.jpg" class="img-responsive" alt="overview"><br>
+					In addition to the five bimanual manipulation tasks mentioned previously in conference paper (including <strong>pull drawer</strong>, <strong>pour water</strong>, <strong>unscrew bottle</strong>, <strong>uncover lid</strong> and <strong>open box</strong>), we have added three new dual-arm atomic skills scuh as <strong>insert pen</strong>, <strong>reorient board</strong> and <strong>flip basket</strong>. Below are illustrations of them.</a>
+				</p>
 				<table style="width: 100%; border-collapse: collapse;">
-					<tr><td style="text-align: left;">Unscrew Bottle</td></tr>
+					<tr><td style="text-align: left;">Insert Pen</td></tr>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/dynamicRes_unscrew1.mp4" type="video/mp4" />
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn1_insert_raw_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn1_insert_vis_slim.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/dynamicRes_unscrew2.mp4" type="video/mp4" />
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn1_insert_robot.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
-					<tr><td style="text-align: left;">Pour Water</td></tr>
+					<tr><td style="text-align: left;">Reorient Board</td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn2_reorient_raw_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn2_reorient_vis_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn2_reorient_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">Flip Basket</td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn3_flipping_raw_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn3_flipping_vis_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="245px" autoplay loop muted>
+						  <source src="video/tn3_flipping_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+
+                <p class="text-justify">
+					Here we continue to show the real robot rollouts of the three newly added bimanual tasks on different new instances. Note that a new perspective camera is selected here to record videos of task <strong>reorient board</strong> due to unexpected circumstances in subsequent transportation and hardware updates.</a>
+				</p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;">Insert Pen (new instances such as paired spoons / forks)</td></tr>
 					<tr>
 						<td style="text-align: left;">
 						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/dynamicRes_pouring1.mp4" type="video/mp4" />
+						  <source src="video/tn1_insert(paired-spoons)_robot.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
 						<video id="v0" width="372px" autoplay loop muted>
-						  <source src="video/dynamicRes_pouring2.mp4" type="video/mp4" />
+						  <source src="video/tn1_insert(paired-forks)_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+
+					<tr><td style="text-align: left;">Reorient Board (new instances such as spoons / shovels)</td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/tn2_reorient(plastic-spoon)_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/tn2_reorient(metal-spoon)_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/tn2_reorient(plastic-shovel)_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/tn2_reorient(metal-shovel)_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+
+					<tr><td style="text-align: left;">Flip Basket (new instances such as white basket / gray pillow)</td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/tn3_flipping(white-basket)_robot.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="372px" autoplay loop muted>
+						  <source src="video/tn3_flipping(gray-pillow)_robot.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
 				</table>
 				
-            </div>
+			</div>
         </div>
+		
 		
 
         <div class="row">
@@ -544,7 +548,7 @@
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
 @article{zhou2025you2,
-	title={You Only Teach Once: One-Shot Bimanual Robotic Manipulation Inspired by Hand Demonstrations},
+	title={YOTO++: Learning Closed-Loop Bimanual Manipulation from One-Shot Video Demonstrations},
 	author={Huayi Zhou, Ruixiang Wang, Yunxin Tai, Yueci Deng, Guiliang Liu, Kui Jia},
 	journal={arXiv preprint arXiv:2506.xxxxxx},
 	year={2025}
