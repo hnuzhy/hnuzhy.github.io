@@ -124,7 +124,185 @@
                 <p class="text-justify">
                     Specifically, in this expansion YOTO++, we have added several new components to enhance its functionality and comprehensiveness. <strong>① First</strong>, we incorporate a vision-based alignment module during the initial grasping phase of each task, enabling closed-loop control to robustly handle dynamic disturbances. <strong>② Second</strong>, we extend YOTO to two additional long-horizon tasks involving tool use, demonstrating its ability to consistently extract and execute temporally coherent multi-stage actions. <strong>③ Third</strong>, we introduce three new bimanual manipulation tasks that encompass a broader range of primitive skills, thereby further validating the generalizability of the proposed framework. <strong>④ Lastly</strong>, we validate the cross-embodiment adaptability of YOTO by deploying it on a humanoid dual-arm robot, showcasing its platform-agnostic nature and real-world applicability across diverse robotic morphologies.</a>
                 </p>
-				<image src="img/visResultsV2.jpg" class="img-responsive" alt="overview">
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t1_drawer_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t1_drawer_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t1_drawer_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t1_drawer_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t2_unscrew_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t2_unscrew_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t2_unscrew_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t2_unscrew_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t3_pouring_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t3_pouring_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t3_pouring_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t3_pouring_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t4_inserting_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t4_inserting_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t4_inserting_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t4_inserting_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t5_reorient_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t5_reorient_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t5_reorient_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t5_reorient_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t6_flipping_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t6_flipping_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t6_flipping_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t6_flipping_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t7_uncover_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t7_uncover_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t7_uncover_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t7_uncover_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t8_openbox_s1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t8_openbox_s2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t8_openbox_s3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="183px" autoplay loop muted>
+						  <source src="skills/t8_openbox_s4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+
 			</div>
         </div>
 
@@ -153,6 +331,11 @@
 					For related object assets, we collected a variety of manipulated objects in instance-level for each of ten bimanual tasks to improve and verify the generalizability of trained policies. All of these objects are from everyday life, not intentionally customized.</a>
                 </p>
 				<image src="img/assetsV2.jpg" class="img-responsive" alt="overview"><br>
+				<p class="text-justify">
+					Below is the visualization of ten bimanual tasks performed on real robots. We use different colors such as cyan, yellow and magenta to distinguish frames of left arm, right arm and both arms, respectively. Arrows are artificially added to show movement trends. It is best to zoom in to view the details.</a>
+                </p>
+				<image src="img/visResultsV2.jpg" class="img-responsive" alt="overview"><br>
+
 			</div>
         </div>
 
