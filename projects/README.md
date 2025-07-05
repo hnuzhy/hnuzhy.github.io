@@ -1,6 +1,6 @@
 # My Personal Projects
 
-* [**YOTO++(arXiv 2025.06)** YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
+* [**YOTO++(year 2025.06)** YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
 
 * [**YOTO(RSS 2025)** You Only Teach Once: Learn One-Shot Bimanual Robotic Manipulation from Video Demonstrations](https://hnuzhy.github.io/projects/YOTO)
 
