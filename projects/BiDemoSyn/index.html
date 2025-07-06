@@ -107,20 +107,17 @@
                     ▶ Framework and Overview of BiDemoSyn
                 </h3>
                 <p class="text-justify">
-					Our contributions about the proposed BiDemoSyn are threefold: <br>
-                    <strong>(1) One-Shot Synthesis Framework:</strong> A systematic pipeline combining task decomposition, vision-guided adaptation, and contact-aware trajectory optimization to generate scalable real-world bimanual demonstrations. <br>
-					<strong>(2) Reality-Grounded Data Generation:</strong> A completely simulator-free method for synthesizing bimanual demonstrations, ensuring physical fidelity by construction. <br>
-					<strong>(3) Empirical Validation in Complex Tasks:</strong> Comprehensive real-robot experiments demonstrating significant improvements in policy robustness and cross-configuration generalization on various bimanual manipulation tasks.</a>
+					Our contributions about the proposed BiDemoSyn are threefold: <strong>(1) One-Shot Synthesis Framework:</strong> A systematic pipeline combining task decomposition, vision-guided adaptation, and contact-aware trajectory optimization to generate scalable real-world bimanual demonstrations. <strong>(2) Reality-Grounded Data Generation:</strong> A completely simulator-free method for synthesizing bimanual demonstrations, ensuring physical fidelity by construction. <strong>(3) Empirical Validation in Complex Tasks:</strong> Comprehensive real-robot experiments demonstrating significant improvements in policy robustness and cross-configuration generalization on various bimanual manipulation tasks.</a>
                 </p>
-				<image src="img/fig1-from-one-to-many.jpg" width="800px" style="text-align: center;" class="img-responsive" alt="overview"><br>
+				<center><image src="img/fig1-from-one-to-many.jpg" width="800px" class="img-responsive" alt="overview"></center><br>
 				<p class="text-justify">
 					<strong>From One to Many ①⭢Ⓝ.</strong> <em>Left</em>: Six representative bimanual manipulation tasks with their one-shot demonstrations and task-specific descriptors. <em>Right</em>: Real-world data collection diagrams, showing object instances with varied geometries and spatial arrangements used to synthesize diverse demonstrations (e.g., hundreds or thousands physically consistent trajectories per task). It is best to zoom in to view the details.</a>
                 </p>
-				<image src="img/fig2-overview-of-bidemosyn.jpg" width="800px" style="text-align: center;" class="img-responsive" alt="overview"><br>
+				<center><image src="img/fig2-overview-of-bidemosyn.jpg" width="800px" class="img-responsive" alt="overview"></center><br>
 				<p class="text-justify">
 					The overview of our method. Taking the <em>pouring</em> task as an example, we illustrate the framework consisting of three stages (e.g., deconstruction, alignment, and optimization) based on a given demonstration. Then, we can apply <strong>BiDemoSyn</strong> to complete data collection efficiently and conveniently in real-world. It is best to zoom in to view the details.</a>
                 </p>
-				<image src="img/fig3-initial-frame-alignment.jpg" width="800px" style="text-align: center;" class="img-responsive" alt="overview"><br>
+				<center><image src="img/fig3-initial-frame-alignment.jpg" width="800px" class="img-responsive" alt="overview"></center><br>
 				<p class="text-justify">
 					Illustrations of the initial frame alignment stage applied to tasks <em>pouring</em> (left and middle) and <em>reorient</em> (right). It shows that we can automatically adjust the grasp pose after the position, orientation and shape of the manipulated object changes.</a>
                 </p>
