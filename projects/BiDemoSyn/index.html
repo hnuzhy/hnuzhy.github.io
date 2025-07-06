@@ -109,15 +109,15 @@
                 <p class="text-justify">
 					Our contributions about the proposed BiDemoSyn are threefold: <strong>(1) One-Shot Synthesis Framework:</strong> A systematic pipeline combining task decomposition, vision-guided adaptation, and contact-aware trajectory optimization to generate scalable real-world bimanual demonstrations. <strong>(2) Reality-Grounded Data Generation:</strong> A completely simulator-free method for synthesizing bimanual demonstrations, ensuring physical fidelity by construction. <strong>(3) Empirical Validation in Complex Tasks:</strong> Comprehensive real-robot experiments demonstrating significant improvements in policy robustness and cross-configuration generalization on various bimanual manipulation tasks.</a>
                 </p>
-				<center><image src="img/fig1-from-one-to-many.jpg" width="800px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig1-from-one-to-many.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
 					<strong>From One to Many ①⭢Ⓝ.</strong> <em>Left</em>: Six representative bimanual manipulation tasks with their one-shot demonstrations and task-specific descriptors. <em>Right</em>: Real-world data collection diagrams, showing object instances with varied geometries and spatial arrangements used to synthesize diverse demonstrations (e.g., hundreds or thousands physically consistent trajectories per task). It is best to zoom in to view the details.</a>
                 </p>
-				<center><image src="img/fig2-overview-of-bidemosyn.jpg" width="800px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig2-overview-of-bidemosyn.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
 					<strong>The overview of our method.</strong> Taking the <em>pouring</em> task as an example, we illustrate the framework consisting of three stages (e.g., deconstruction, alignment, and optimization) based on a given demonstration. Then, we can apply <strong>BiDemoSyn</strong> to complete data collection efficiently and conveniently in real-world. It is best to zoom in to view the details.</a>
                 </p>
-				<center><image src="img/fig3-initial-frame-alignment.jpg" width="800px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig3-initial-frame-alignment.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
 					Illustrations of the <strong>initial frame alignment stage</strong> applied to tasks <em>pouring</em> (left and middle) and <em>reorient</em> (right). It shows that we can automatically adjust the grasp pose after the position, orientation and shape of the manipulated object changes.</a>
                 </p>
@@ -132,7 +132,7 @@
                 <h3>
                     ▶ ① Implementation of Data Collection, Processing and Synthesis
                 </h3>
-				<center><image src="img/fig4-fig5-platform-gridcells.png" width="900px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig4-fig5-platform-gridcells.png" width="900px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
 					<strong>Left-Top:</strong> The fixed-base dual-arm manipulator platform (a table with two robot arms, two grippers and the binocular camera) used in this research. <strong>Left-Bottom:</strong> Object assets involved in all six bimanual manipulation tasks. Each object has been scaled down proportionally. <strong>Right:</strong> The specific grid cell division way for each task. For tasks involving two manipulated objects, the total number of grid cells will be divided equally between the left side and right side.</a>
                 </p>
@@ -250,12 +250,15 @@
                 </h3>
                 <p class="text-justify">
 					We adapt two advanced visuomotor policies <strong>3D Diffusion Policy(DP3)</strong> and <strong>EquiBot</strong> to bimanual settings by modifying their modeling spaces to dual-arm actions. Observation inputs are segmented 3D point clouds of task-relevant objects using <strong>Florence2</strong> + <strong>SAM2</strong>, and policies operate in the open-loop discrete keyposes prediction to align with our synthesized demonstration format. <br>
-					Compared baseline methods include point cloud editing <strong>DemoGen</strong>, real robot auto-rollout <strong>YOTO</strong>, and human drag teaching (close to <strong>Teleoperation</strong>). Generally, the quality of collected demonstrations by these baselines is better in turn, but the cost is more time-consuming. <br>
+					Compared baseline methods include point cloud editing <strong>DemoGen</strong>, real robot auto-rollout <strong>YOTO</strong>, and human drag teaching (close to <strong>Teleoperation</strong>). Generally, the quality of collected demonstrations by these baselines is better in turn, but the cost is more time-consuming. </a>
+                </p>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+                <p class="text-justify">
 					Our experiments address three core questions. <strong>Q1</strong>: Is BiDemoSyn truly efficient and user-friendly? <strong>Q2</strong>: Does BiDemoSyn enable scalable visuomotor imitation learning? <strong>Q3</strong>: Does synthetic demonstrations generalize to spatial and object variations?</a>
                 </p>
-				<center><image src="img/fig6-efficiency-comparison.jpg" width="700px" class="img-responsive" alt="overview"></center><br>
-				<center><image src="img/fig7-quantitative-comparison.jpg" width="700px" class="img-responsive" alt="overview"></center><br>
-				<center><image src="img/fig8-data-scale-diversity.jpg" width="700px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig6-efficiency-comparison.jpg" width="700px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/fig7-quantitative-comparison.jpg" width="700px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/fig8-data-scale-diversity.jpg" width="700px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
 					Above results have answered three questions raised earlier, demonstrating that BiDemoSyn can efficiently synthesize high-quality real-world demonstrations, enabling scalable and generalizable visuomotor policy training with minimal human input. <br>
                     <strong>A1: The efficiency and usability of BiDemoSyn have obvious advantages over baselines.</strong> <br>
@@ -273,45 +276,43 @@
 				<h3>
                     ▶ ③ Visualization and Analysis of Real Robot Rollouts
                 </h3>
-				<center><image src="img/fig9-qualitative-results.jpg" width="900px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig9-qualitative-results.jpg" width="900px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
 					Above is the visualization of all six bimanual tasks performed on real robots. All models are trained and tested under the ID evaluations. EquiBot is chosen as the visuomotor policy. Key dual-arm coordination movements associated with each task are partially enlarged for quick review.</a>
                 </p>
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="465px" autoplay loop muted>
+						<video id="v0" width="468px" autoplay loop muted>
 						  <source src="videos/real-rollout-t1-plugpen.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="465px" autoplay loop muted>
+						<video id="v0" width="468px" autoplay loop muted>
 						  <source src="videos/real-rollout-t2-inserting.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
-					<br>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="465px" autoplay loop muted>
+						<video id="v0" width="468px" autoplay loop muted>
 						  <source src="videos/real-rollout-t3-unscrew.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="465px" autoplay loop muted>
+						<video id="v0" width="468px" autoplay loop muted>
 						  <source src="videos/real-rollout-t4-pouring.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
-					<br>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="465px" autoplay loop muted>
+						<video id="v0" width="468px" autoplay loop muted>
 						  <source src="videos/real-rollout-t5-pressing.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="465px" autoplay loop muted>
+						<video id="v0" width="468px" autoplay loop muted>
 						  <source src="videos/real-rollout-t6-reorient.mp4" type="video/mp4" />
 						</video>
 						</td>
@@ -320,11 +321,11 @@
                 <p class="text-justify">
 					We here supplement more qualitative video results, which underscore BiDemoSyn's ability to handle real-world complexities (such as mechanical tolerances and imperfect perception), while also exposing limitations in dynamic force modulation (e.g., over-pressing bottles or lids).</a>
 				</p>
-				<image src="img/gray_line.jpg" class="img-responsive" alt="overview"><br>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
                 <p class="text-justify">
 					While policies trained with BiDemoSyn achieve high success rates, failure analysis reveals systematic challenges. Note that although the policy we trained is executed end-to-end (it establishes an implicit mapping from observations to action outputs), we can still align the analysis from the stage where its failure cases are located to find the core cause of the error. Finally, using the experimental results of EquiBot under out-of-distribution evaluations, we categorize failures into five types according to the task execution logic (mainly from the design module of BiDemoSyn):</a>
 				</p>
-				<center><image src="img/fig10-failure-cases-analysis.jpg" width="700px" class="img-responsive" alt="overview"></center><br>
+				<center><image src="img/fig10-failure-cases-analysis.jpg" width="700px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
 					As can be seen, the orientation estimation and initial grasp failures dominate, reflecting two core challenges: (1) current pose estimators struggle with symmetric or textureless objects (e.g., metal spoon or shovel), and (2) gripper-centric path planning lacks fine-grained contact modeling (e.g., avoiding pre-touch collisions for irregular shapes). Addressing these requires advances in category-agnostic pose estimation and short-horizon contact optimization, which are critical directions for our future work.</a>
 				</p>
