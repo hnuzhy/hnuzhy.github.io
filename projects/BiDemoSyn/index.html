@@ -1,1 +1,387 @@
 
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>BiDemoSyn</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://hnuzhy.github.io/projects/BPJDet/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hnuzhy.github.io/projects/BiDemoSyn/"/>
+    <meta property="og:title" content="YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations" />
+    <meta property="og:description" content="Dexterous bimanual manipulation policies require extensive and diverse demonstrations to achieve robust generalization, yet existing paradigms face critical trade-offs: the teleoperation demands impractical labor for scalable data collection, while simulation-based synthesis struggles with sim-to-real gaps that undermine real-world applicability. We propose <strong>BiDemoSyn</strong>, a framework for contact-rich, physically-feasible <strong>Bi</strong>manual <strong>Demon</strong>strations <strong>Syn</strong>thesis from a single provided example, bypassing cumbersome manual effort and defective simulation dependencies. The core of our approach lies in decomposing complex bimanual tasks into invariant patterns and adaptive components, such as stable dual-arm coordination and object pose-dependent adjustments. Then, we leverage vision-guided scene adaptation to synthesize demonstrations across object spatial variations. Through hierarchical trajectory optimization, we dynamically modulate motion primitives to preserve task semantics while ensuring feasibility under real-world physical constraints. Experiments on real robots demonstrate that policies trained with our synthesized data generalize effectively to unseen configurations, offering an efficient and feasible alternative to methods reliant on simulated data or labor-intensive human collection. By bridging the divide between data scalability and real-world fidelity, <strong>BiDemoSyn</strong> enables scalable imitation learning for intricate bimanual tasks without compromising physical grounding. "/>
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                One-Shot Real-World Bimanual Demonstration Synthesis for Scalable Imitation Learning</br> 
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://hnuzhy.github.io">Huayi Zhou</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen
+                    </li>
+                    <li>
+                        <a href="http://kuijia.site">Kui Jia</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen; DexForce, Shenzhen
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="manu_BiDemoSyn.pdf">
+                            <image src="img/logo_document.png" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+						<li>
+                            <a href="https://arxiv.org/abs/2507.xxxxx">
+                            <image src="img/logo_arXiv.png" height="50px">
+                                <h4><strong>arXiv</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/hnuzhy/">
+                            <image src="img/logo_github.png" height="50px">
+                                <h4><strong>Code (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+					Dexterous bimanual manipulation policies require extensive and diverse demonstrations to achieve robust generalization, yet existing paradigms face critical trade-offs: the teleoperation demands impractical labor for scalable data collection, while simulation-based synthesis struggles with sim-to-real gaps that undermine real-world applicability. We propose <strong>BiDemoSyn</strong>, a framework for contact-rich, physically-feasible <strong>Bi</strong>manual <strong>Demon</strong>strations <strong>Syn</strong>thesis from a single provided example, bypassing cumbersome manual effort and defective simulation dependencies. The core of our approach lies in decomposing complex bimanual tasks into invariant patterns and adaptive components, such as stable dual-arm coordination and object pose-dependent adjustments. Then, we leverage vision-guided scene adaptation to synthesize demonstrations across object spatial variations. Through hierarchical trajectory optimization, we dynamically modulate motion primitives to preserve task semantics while ensuring feasibility under real-world physical constraints. Experiments on real robots demonstrate that policies trained with our synthesized data generalize effectively to unseen configurations, offering an efficient and feasible alternative to methods reliant on simulated data or labor-intensive human collection. By bridging the divide between data scalability and real-world fidelity, <strong>BiDemoSyn</strong> enables scalable imitation learning for intricate bimanual tasks without compromising physical grounding.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+    		<div class="col-md-10 col-md-offset-1">
+				<h3>
+                    ▶ Framework and Overview of BiDemoSyn
+                </h3>
+                <p class="text-justify">
+                    <strong>(1) One-Shot Synthesis Framework:</strong> A systematic pipeline combining task decomposition, vision-guided adaptation, and contact-aware trajectory optimization to generate scalable real-world bimanual demonstrations.</a>
+					<strong>(2) Reality-Grounded Data Generation:</strong> A completely simulator-free method for synthesizing bimanual demonstrations, ensuring physical fidelity by construction.</a>
+					<strong>(3) Empirical Validation in Complex Tasks:</strong> Comprehensive real-robot experiments demonstrating significant improvements in policy robustness and cross-configuration generalization on various bimanual manipulation tasks.</a>
+                </p>
+				<image src="img/fig1-from-one-to-many.jpg" class="img-responsive" alt="overview"><br>
+				<p class="text-justify">
+					<strong>From One to Many ①⭢Ⓝ.</strong> <em>Left</em>: Six representative bimanual manipulation tasks with their one-shot demonstrations and task-specific descriptors. <em>Right</em>: Real-world data collection diagrams, showing object instances with varied geometries and spatial arrangements used to synthesize diverse demonstrations (e.g., hundreds or thousands physically consistent trajectories per task). It is best to zoom in to view the details.</a>
+                </p>
+				<image src="img/fig2-overview-of-bidemosyn.jpg" class="img-responsive" alt="overview"><br>
+				<p class="text-justify">
+					The overview of our method. Taking the <em>pouring</em> task as an example, we illustrate the framework consisting of three stages (e.g., deconstruction, alignment, and optimization) based on a given demonstration. Then, we can apply <strong>BiDemoSyn</strong> to complete data collection efficiently and conveniently in real-world. It is best to zoom in to view the details.</a>
+                </p>
+				<image src="img/fig3-initial-frame-alignment.jpg" class="img-responsive" alt="overview"><br>
+				<p class="text-justify">
+					Illustrations of the initial frame alignment stage applied to tasks <em>pouring</em> (left and middle) and <em>reorient</em> (right). It shows that we can automatically adjust the grasp pose after the position, orientation and shape of the manipulated object changes.</a>
+                </p>
+				
+			</div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    ▶ ① Implementation of Data Collection, Processing and Synthesis
+                </h3>
+				<image src="img/fig4-platform-object-assets.jpg" class="img-responsive" alt="overview"><br>
+				<p class="text-justify">
+					<strong>Left:</strong> The fixed-base dual-arm manipulator platform (a table with two robot arms, two grippers and the binocular camera) used in this research. <strong>Right:</strong> The object assets involved in our six bimanual manipulation tasks. All objects have been scaled down proportionally.</a>
+                </p>
+				<image src="img/fig5-gridcells-for-collection.jpg" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+					The specific grid cell division way for each task. For tasks involving two manipulated objects, the total number of grid cells will be divided equally between the left side and right side.</a>
+                </p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;">task 1: <strong>plugpen</strong></td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<image src="img/UI-T1-plugpen-marker02.jpg" class="img-responsive" height="153px" alt="overview">
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t1-plugpen-e1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t1-plugpen-e2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 2: <strong>inserting</strong></td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<image src="img/UI-T2-inserting-ordcup01-marker02.jpg" class="img-responsive" height="153px" alt="overview">
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t2-inserting-e1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t2-inserting-e2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 3: <strong>unscrew</strong></td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<image src="img/UI-T3-unscrew-bottle03.jpg" class="img-responsive" height="153px" alt="overview">
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t3-unscrew-e1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t3-unscrew-e2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 4: <strong>pouring</strong></td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<image src="img/UI-T4-pouring-bottle03-mugcup01.jpg" class="img-responsive" height="153px" alt="overview">
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t4-pouring-e1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t4-pouring-e2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 5: <strong>pressing</strong></td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<image src="img/UI-T5-pressing-ordcup01-nozzle01.jpg" class="img-responsive" height="153px" alt="overview">
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t5-pressing-e1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t5-pressing-e2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 6: <strong>reorient</strong></td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<image src="img/UI-T6-reorient-anyobj01.jpg" class="img-responsive" height="153px" alt="overview">
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t6-reorient-e1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" height="153px" autoplay loop muted>
+						  <source src="video/BiDemoSyn-t6-reorient-e2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+                <p class="text-justify">
+					UI interface and real-world data collection examples. When collecting data, the six tasks need to display different grid cells in real time, as well as perceive and track objects related to the tasks. Note that these points, crosses and lines are drawn digitally, which are not marks in the real world. </a>
+                </p>
+				
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    ▶ ② Training, Deployment and Evaluation of Imitation Policies
+                </h3>
+                <p class="text-justify">
+					We adapt two advanced visuomotor policies <strong>3D Diffusion Policy(DP3)</strong> and <strong>EquiBot</strong> to bimanual settings by modifying their modeling spaces to dual-arm actions. Observation inputs are segmented 3D point clouds of task-relevant objects using <strong>Florence2</strong> + <strong>SAM2</strong>, and policies operate in the open-loop discrete keyposes prediction to align with our synthesized demonstration format. Compared baseline methods include point cloud editing <strong>DemoGen</strong>, real robot auto-rollout <strong>YOTO</strong>, and human drag teaching (close to <strong>Teleoperation</strong>). Generally, the quality of collected demonstrations by these baselines is better in turn, but the cost is more time-consuming.</a>
+                </p>
+                <p class="text-justify">
+					Our experiments address three core questions. <strong>Q1</strong>: Is BiDemoSyn truly efficient and user-friendly? <strong>Q2</strong>: Does BiDemoSyn enable scalable visuomotor imitation learning? <strong>Q3</strong>: Does synthetic demonstrations generalize to spatial and object variations?</a>
+                </p>
+				<image src="img/fig6-efficiency-comparison.jpg" class="img-responsive" alt="overview"><br>
+				<image src="img/fig7-quantitative-comparison.jpg" class="img-responsive" alt="overview"><br>
+				<image src="img/fig8-data-scale-diversity.jpg" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+					Above results have answered three questions raised earlier, demonstrating that BiDemoSyn can efficiently synthesize high-quality real-world demonstrations, enabling scalable and generalizable visuomotor policy training with minimal human input. Then there are some snapshots of real robot execution effects.</a>
+                    <strong>A1: The efficiency and usability of BiDemoSyn have obvious advantages over baselines.</strong></a>
+					<strong>A2: Demonstrations obtained via BiDemoSyn can support scalable imitation learning.</strong> </a>
+					<strong>A3: Policies trained on BiDemoSyn data can achieve generalization to unseen variations.</strong> </a>
+                </p>
+
+            </div>
+        </div>
+
+		
+		
+        <div class="row">
+    		<div class="col-md-10 col-md-offset-1">	
+				<h3>
+                    ▶ ③ Visualization and Analysis of Real Robot Rollouts
+                </h3>
+				<image src="img/fig9-qualitative-results.jpg" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+					Above is the visualization of all six bimanual tasks performed on real robots. All models are trained and tested under the ID evaluations. EquiBot is chosen as the visuomotor policy. Key dual-arm coordination movements associated with each task are partially enlarged for quick review.</a>
+                </p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;">task 1: <strong>plugpen</strong></td></tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="750px" autoplay loop muted>
+						  <source src="video/real-rollout-t1-plugpen.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 2: <strong>inserting</strong></td></tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="750px" autoplay loop muted>
+						  <source src="video/real-rollout-t2-inserting.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 3: <strong>unscrew</strong></td></tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="750px" autoplay loop muted>
+						  <source src="video/real-rollout-t3-unscrew.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 4: <strong>pouring</strong></td></tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="750px" autoplay loop muted>
+						  <source src="video/real-rollout-t4-pouring.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 5: <strong>pressing</strong></td></tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="750px" autoplay loop muted>
+						  <source src="video/real-rollout-t5-pressing.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;">task 6: <strong>reorient</strong></td></tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="750px" autoplay loop muted>
+						  <source src="video/real-rollout-t6-reorient.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+                <p class="text-justify">
+					We here supplement more qualitative results with additional real-robot execution visualizations, highlighting nuanced state transitions and task-specific challenges. These visualizations underscore BiDemoSyn's ability to handle real-world complexities (such as mechanical tolerances and imperfect perception), while also exposing limitations in dynamic force modulation (e.g., over-pressing bottles or lids).</a>
+				</p>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+					While policies trained with BiDemoSyn achieve high success rates, failure analysis reveals systematic challenges. Note that although the policy we trained is executed end-to-end (it establishes an implicit mapping from observations to action outputs), we can still align the analysis from the stage where its failure cases are located to find the core cause of the error. Finally, using the experimental results of EquiBot under out-of-distribution evaluations, we categorize failures into five types according to the task execution logic (mainly from the design module of BiDemoSyn):</a>
+				</p>
+				<image src="img/fig10-failure-cases-analysis.jpg" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+					As can be seen, the orientation estimation and initial grasp failures dominate, reflecting two core challenges: (1) current pose estimators struggle with symmetric or textureless objects (e.g., metal spoon or shovel), and (2) gripper-centric path planning lacks fine-grained contact modeling (e.g., avoiding pre-touch collisions for irregular shapes). Addressing these requires advances in category-agnostic pose estimation and short-horizon contact optimization, which are critical directions for our future work.</a>
+				</p>
+				
+			</div>
+        </div>
+		
+		
+					
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{zhou2025one,
+	title={One-Shot Real-World Bimanual Demonstration Synthesis for Scalable Imitation Learning},
+	author={Huayi Zhou, Kui Jia},
+	journal={arXiv preprint arXiv:2507.xxxxxx},
+	year={2025}
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                We acknowledge the providers of various hardware used in this project, including the <a href="https://www.aubo-cobot.com/public/i5product3">Aubo-i5 robotic arm</a>, <a href="https://en.dh-robotics.com/product/pgi">DH gripper PGI-80-80</a>, and <a href="https://dexforce-3dvision.com/productinfo/1022811.html">kingfisher binocular camera</a>. 
+                    <br><br>
+                The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+		
+    </div>
+</body>
+</html>
