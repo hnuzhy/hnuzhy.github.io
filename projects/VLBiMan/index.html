@@ -43,12 +43,12 @@
 <body>
     <div class="container" id="main">
         <div class="row">
-            <h2 class="col-md-12 text-center">
+            <h2 class="col-md-10 text-center">
                 Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Manipulation</br> 
             </h2>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-10 text-center">
                 <ul class="list-inline">
                     <li>
                         <a href="https://hnuzhy.github.io">Huayi Zhou</a>
@@ -108,7 +108,7 @@
                     ▶ Overview and Framework of VLBiMan
                 </h3>
                 <p class="text-justify">
-					Our contributions in this research are threefold: (1) We propose VLBiMan, a novel framework that enables generalizable bimanual manipulation through one-shot demonstration and vision-language anchoring, without retraining. (2)We introduce a task-aware motion decomposition and adaptation mechanism, allowing for effective reuse of invariant sub-skills via object-centric anchors derived from VLMs. (3) We demonstrate the effectiveness of VLBiMan across ten diverse bimanual manipulation tasks, significantly outperforming strong baselines in generalization and sample efficiency.</a>
+					Our contributions in this research are threefold: <strong>(1)</strong> We propose VLBiMan, a novel framework that enables generalizable bimanual manipulation through one-shot demonstration and vision-language anchoring, without retraining. <strong>(2)</strong> We introduce a task-aware motion decomposition and adaptation mechanism, allowing for effective reuse of invariant sub-skills via object-centric anchors derived from VLMs. <strong>(3)</strong> We demonstrate the effectiveness of VLBiMan across ten diverse bimanual manipulation tasks, significantly outperforming strong baselines in generalization and sample efficiency.</a>
                 </p>
 				<center><image src="img/fig1-VLBiMan-overview.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
@@ -120,7 +120,7 @@
                 </p>
 				<center><image src="img/fig3-representative-points.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
-					Illustrations of <strong>selecting representative points</strong> of manipulated objects in three increasingly difficult tasks: <em>pouring</em> (left), <em>reorient+unscrew</em> (middle) and <em>tool-use:spoon</em> (right). These representative points will be used to calculate the change in position and orientation (not always required) of the newly placed object.</a>
+					Illustrations of <strong>selecting representative points</strong> of manipulated objects in three increasingly difficult tasks: <em>pouring</em> (left), <em>reorient+unscrew</em> (middle) and <em>tool-use:spoon</em> (right). These representative points will be used to calculate the change in position and orientation of the newly placed object.</a>
                 </p>
 				
 			</div>
@@ -137,16 +137,16 @@
 				<p class="text-justify">
 					<strong>Top-Right:</strong> The fixed-base dual-arm manipulator platform (a table with two robot arms, two grippers and the binocular camera) used in this research. <strong>Left and Bottom:</strong> Manipulated object assets involved in all six bimanual manipulation tasks (including <em>plugpen</em>, <em>inserting</em>, <em>unscrew</em>, <em>pouring</em>, <em>pressing</em> and <em>reorient</em>) with primary skills and four long-horizon bimanual manipulation tasks (including <em>reorient+unscrew</em>, <em>unscrew+pouring</em>, <em>tool-use spoon</em> and <em>tool-use funnel</em>). Each object has been scaled down proportionally.</a>
                 </p>
-				<center><image src="img/alg1-object-orientation-estimation.jpg" width="900px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/alg1-object-orientation-estimation.jpg" width="700px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
 					<strong>Image Moments based Orientation Estimation.</strong> In the Vision-Language Anchored Adaptation pipeline of VLBiMan, our method requires extracting the principal axis and determining the orientation of direction-sensitive objects. This includes the marker pen in the <em>plugpen</em> and <em>inserting</em> tasks, the spoon in the <em>reorient</em> and <em>tool-use spoon</em> tasks, as well as the horizontally placed bottle in the <em>reorient+unscrew</em> task. As shown in <strong>Alg.1</strong>, we adopt an object principal axis extraction algorithm based on image moments theory. Since this algorithm relies primarily on the 2D segmentation mask of object and does not require any deep networks, its computational overhead is minimal and can be considered negligible in practice.</a>
                 </p>
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
                 <p class="text-justify">
-					<strong>Baselines and Metric.<strong> For each task setting, we conduct 20 trials, where objects are randomly located or replaced, and the success rate will be reported. For baselines, we compare to <strong>ReKep</strong> based on VFMs (<strong>SAM</strong> and <strong>DINOv2</strong>) and <strong>GPT-4o</strong>, as well as <strong>Robot-ABC</strong> based on keypoint affordance prediction with using <strong>AnyGrasp</strong> for initial grasping (After which, the remaining trajectory is obtained by trivial modules combination). </a>
+					<strong>Baselines and Metric.</strong> For each task setting, we conduct 20 trials, where objects are randomly located or replaced, and the success rate will be reported. For baselines, we compare to <strong>ReKep</strong> based on VFMs (<strong>SAM</strong> and <strong>DINOv2</strong>) and <strong>GPT-4o</strong>, as well as <strong>Robot-ABC</strong> based on keypoint affordance prediction with using <strong>AnyGrasp</strong> for initial grasping (After which, the remaining trajectory is obtained by trivial modules combination). </a>
                 </p>
                 <p class="text-justify">
-					In experiments, we aim to answer following research questions: <strong>(1)</strong> <em>How well does our framework automatically formulate and synthesize bimanual manipulation behaviors?</em> </strong>(2)</strong> <em>Can our method generalize to novel scenarios and achieve effective combination of skills?</em> </strong>(3)</strong> <em>How do individual components contribute to the effectiveness and robustness of our system?</em> </a>
+					In experiments, we aim to answer following research questions: <strong>(1)</strong> <em>How well does our framework automatically formulate and synthesize bimanual manipulation behaviors?</em> <strong>(2)</strong> <em>Can our method generalize to novel scenarios and achieve effective combination of skills?</em> <strong>(3)</strong> <em>How do individual components contribute to the effectiveness and robustness of our system?</em> </a>
                 </p>
 				<center><image src="img/gray_line.jpg" class="img-responsive" width="700px" alt="overview"></center>
 				<center><image src="img/tab1-quantitative-results-6tasks.jpg" width="700px" class="img-responsive" alt="overview"></center>
@@ -171,7 +171,7 @@
                 </h3>
 				<center><image src="img/fig5-rollouts-visualization.jpg" width="800px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
-					Above is the visualization of all ten tasks executed on real robots. They are designed to validate different aspects, including <strong>(a)</strong> six dual-arm primary skills, <strong>(b)</strong> combination of basic skills for two long-horizon tasks, and <strong>(c)</strong> exploration of multi-stage spatiotemporal dependencies in two tool-use tasks. </a>
+					Above is the visualization of all ten tasks executed on real robots. They are designed to validate different aspects, including <strong>ⓐ</strong> six dual-arm primary skills, <strong>ⓑ</strong> combination of basic skills for two long-horizon tasks, and <strong>ⓒ</strong> exploration of multi-stage spatiotemporal dependencies in two tool-use tasks. </a>
                 </p>
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr>
