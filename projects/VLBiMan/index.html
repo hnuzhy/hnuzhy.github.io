@@ -138,7 +138,9 @@
 					<strong>Top-Right:</strong> The fixed-base dual-arm manipulator platform (a table with two robot arms, two grippers and the binocular camera) used in this research. <strong>Left and Bottom:</strong> Manipulated object assets involved in all six bimanual manipulation tasks (including <em>plugpen</em>, <em>inserting</em>, <em>unscrew</em>, <em>pouring</em>, <em>pressing</em> and <em>reorient</em>) with primary skills and four long-horizon bimanual manipulation tasks (including <em>reorient+unscrew</em>, <em>unscrew+pouring</em>, <em>tool-use spoon</em> and <em>tool-use funnel</em>). Each object has been scaled down proportionally.</a>
                 </p>
 				<center><image src="img/alg1-object-orientation-estimation.jpg" width="650px" class="img-responsive" alt="overview"></center>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
                 <p class="text-justify">
+			
 					<strong>Image Moments based Orientation Estimation.</strong> In the Vision-Language Anchored Adaptation pipeline of VLBiMan, our method requires extracting the principal axis and determining the orientation of direction-sensitive objects. This includes the marker pen in the <em>plugpen</em> and <em>inserting</em> tasks, the spoon in the <em>reorient</em> and <em>tool-use spoon</em> tasks, as well as the horizontally placed bottle in the <em>reorient+unscrew</em> task. As shown in <strong>Alg.1</strong>, we adopt an object principal axis extraction algorithm based on image moments theory. Since this algorithm relies primarily on the 2D segmentation mask of object and does not require any deep networks, its computational overhead is minimal and can be considered negligible in practice.</a>
                 </p>
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
