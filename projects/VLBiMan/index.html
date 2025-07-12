@@ -137,10 +137,9 @@
 				<p class="text-justify">
 					<strong>Top-Right:</strong> The fixed-base dual-arm manipulator platform (a table with two robot arms, two grippers and the binocular camera) used in this research. <strong>Left and Bottom:</strong> Manipulated object assets involved in all six bimanual manipulation tasks (including <em>plugpen</em>, <em>inserting</em>, <em>unscrew</em>, <em>pouring</em>, <em>pressing</em> and <em>reorient</em>) with primary skills and four long-horizon bimanual manipulation tasks (including <em>reorient+unscrew</em>, <em>unscrew+pouring</em>, <em>tool-use spoon</em> and <em>tool-use funnel</em>). Each object has been scaled down proportionally.</a>
                 </p>
-				<center><image src="img/alg1-object-orientation-estimation.jpg" width="650px" class="img-responsive" alt="overview"></center>
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				<center><image src="img/alg1-object-orientation-estimation.jpg" width="650px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
-			
 					<strong>Image Moments based Orientation Estimation.</strong> In the Vision-Language Anchored Adaptation pipeline of VLBiMan, our method requires extracting the principal axis and determining the orientation of direction-sensitive objects. This includes the marker pen in the <em>plugpen</em> and <em>inserting</em> tasks, the spoon in the <em>reorient</em> and <em>tool-use spoon</em> tasks, as well as the horizontally placed bottle in the <em>reorient+unscrew</em> task. As shown in <strong>Alg.1</strong>, we adopt an object principal axis extraction algorithm based on image moments theory. Since this algorithm relies primarily on the 2D segmentation mask of object and does not require any deep networks, its computational overhead is minimal and can be considered negligible in practice.</a>
                 </p>
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
@@ -175,48 +174,175 @@
                 <p class="text-justify">
 					Above is the visualization of all ten tasks executed on real robots. They are designed to validate different aspects, including <strong>ⓐ</strong> six dual-arm primary skills, <strong>ⓑ</strong> combination of basic skills for two long-horizon tasks, and <strong>ⓒ</strong> exploration of multi-stage spatiotemporal dependencies in two tool-use tasks. </a>
                 </p>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+                <p class="text-justify">
+					<strong>Video collection of real robot deployments (with human dynamic interference) for all ten tasks<strong>. The video central area shows manipulated objects involved in each task. Ten tasks include <em>plugpen</em>, <em>inserting</em>, <em>unscrew</em>, <em>pouring</em>, <em>pressing</em>, <em>reorient</em>, <em>reorient+unscrew</em>, <em>unscrew+pouring</em>, <em>tool-use spoon</em> and <em>tool-use funnel</em>. </a>
+                </p>
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr>
 						<td style="text-align: left;">
 						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t1-plugpen.mp4" type="video/mp4" />
+						  <source src="videos/real-rollout-t01-plugpen.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
 						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t2-inserting.mp4" type="video/mp4" />
+						  <source src="videos/real-rollout-t02-inserting.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
 					<tr>
 						<td style="text-align: left;">
 						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t3-unscrew.mp4" type="video/mp4" />
+						  <source src="videos/real-rollout-t03-unscrew.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
 						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t4-pouring.mp4" type="video/mp4" />
+						  <source src="videos/real-rollout-t04-pouring.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
 					<tr>
 						<td style="text-align: left;">
 						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t5-pressing.mp4" type="video/mp4" />
+						  <source src="videos/real-rollout-t05-pressing.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
 						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t6-reorient.mp4" type="video/mp4" />
+						  <source src="videos/real-rollout-t06-reorient.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t07-reorient+unscrew.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t08-unscrew+pouring.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t09-tool-use_spoon.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t10-tool-use_funnel.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
 				</table>
+
                 <p class="text-justify">
-					We here supplement more qualitative videos of real robot rollouts. The blue rectangle boxes in each video are the corresponding given one-shot demonstrations. The red rectangle boxes are results of novel configurations (e.g., new placements or instances). All related videos have been sped up 2x for faster viewing and checking. These results underscore BiDemoSyn's ability to handle real-world complexities (such as mechanical tolerances and imperfect perception), while also exposing limitations in dynamic force modulation (e.g., over-pressing bottles or lids).</a>
+					<strong>Good robustness of VLBiMan to lighting changes.<strong> Below videos comparison reveals the impact of uneven lighting on the robustness of six basic bimanual tasks (still with interference). As can be seen, our solution VLBiMan combined with VLMs is robust to uneven lighting.</a>
 				</p>
-				
+				<center><image src="img/tabA1-quantitative-uneven-light.jpg" width="700px" class="img-responsive" alt="overview"></center>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: center;">Even Light Results</td>
+						<td style="text-align: center;">Uneven Light Results</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/Light_Even-6_tasks_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/Light_Uneven-6_tasks_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+
+
+
+                <p class="text-justify">
+					<strong>Efficient synchronous dual-arm movement<strong> Below is comparison of the time consumption for asynchronous or synchronous execution of all ten tasks. We also created a dynamic comparison chart of all ten tasks into one page slice for quick viewing. The coordination and synchronization of two arms can obviously improve manipulation efficiency. We observed time savings of varying magnitudes across all ten tasks, yielding <em>an average improvement in execution efficiency of approximately 22%</em>.</a>
+				</p>
+				<center><image src="img/time-cost-stat.jpg" width="700px" class="img-responsive" alt="overview"></center>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: center;">plugpen</td>
+						<td style="text-align: center;">inserting</td>
+						<td style="text-align: center;">unscrew</td>
+						<td style="text-align: center;">pouring</td>
+						<td style="text-align: center;">pressing</td>
+						<td style="text-align: center;">reorient</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-plugpen_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-inserting_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-unscrew_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-pouring_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-pressing_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-reorient_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">reorient+unscrew</td>
+						<td style="text-align: center;">unscrew+pouring</td>
+						<td style="text-align: center;">tool-use spoon</td>
+						<td style="text-align: center;">tool-use funnel</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"></td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-reorient_unscrew_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-unscrew_pouring_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-tool_spoon_3x_slim.mp44" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="155px" autoplay loop muted>
+						  <source src="videos/Asyn_vs_Syn-tool_funnel_3x_slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;"></td>
+					</tr>
+				</table>
+
 			</div>
         </div>
 		
