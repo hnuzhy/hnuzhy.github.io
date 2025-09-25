@@ -107,7 +107,7 @@
                     ▶ Overview and Framework of BiNoMaP
                 </h3>
                 <p class="text-justify">
-					Our contributions in this research are threefold: <strong>(1)</strong> We propose the first RL-free framework for learning Bimanual Non-Prehensile Manipulation Primitives directly from human video demonstrations. <strong>(2)</strong> We introduce a parameterization scheme that enables category-level generalization of non-prehensile skills across diverse object instances. <strong>(3)</strong> We demonstrate the effectiveness, efficiency, versatility, and generality of BiNoMaP across a variety of tasks, objects, and strong baselines.</a>
+					Our contributions are threefold: <strong>(1)</strong> We propose the first RL-free framework for learning Bimanual Non-Prehensile Manipulation Primitives directly from human video demonstrations. <strong>(2)</strong> We introduce a parameterization scheme that enables category-level generalization of non-prehensile skills across diverse object instances. <strong>(3)</strong> We demonstrate the effectiveness, efficiency, versatility, and generality of BiNoMaP across a variety of tasks, objects, and strong baselines.</a>
                 </p>
 				<center><image src="img/fig1-BiNoMaP-overview.png" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
@@ -139,31 +139,46 @@
                 </p>
 				<center><image src="img/fig4-BiNoMaP-ObjectAssets.png" width="800px" class="img-responsive" alt="overview"></center>
 
-				
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 
                 <p class="text-justify">
-					<strong>(Stage 1) Bimanual Hand Trajectory Extraction.</strong> 3D Hand Reconstruction from Videos & Hand-to-Robot Trajectory Extraction. Below is the <em>dynamic extraciton visualization</em>. </a>
+					<strong>(Stage 1) Bimanual Hand Trajectory Extraction.</strong> 3D Hand Reconstruction from Videos & Hand-to-Robot Trajectory Extraction. </a>
                 </p>
-				<center><video id="v0" width="800px" autoplay loop muted controls><source src="videos/BiNoMaP-HandTrajsVideo.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="800px" autoplay loop muted><source src="videos/BiNoMaP-HandTrajsVideo.mp4" type="video/mp4" /></video></center>
 				<!-- <center><image src="img/fig5-BiNoMaP-HandTrajsFinal.jpg" width="800px" class="img-responsive" alt="overview"></center> -->
 				<!-- <center><image src="img/fig5-BiNoMaP-StartEndFrames.jpg" width="800px" class="img-responsive" alt="overview"></center> -->
 
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 
                 <p class="text-justify">
-					<strong>(Stage 2) Coarse-to-Fine Motion Post-Optimization.</strong> Motion Smoothness Optimization & Geometry-Aware Iterative Contact Adjustment. From top to down are <em>predefined motion patterns for four skills</em>, and two examples for the <em>dynamic process of trajectory refinement</em>. </a>
+					<strong>(Stage 2) Coarse-to-Fine Motion Post-Optimization.</strong> Motion Smoothness Optimization & Geometry-Aware Iterative Contact Adjustment. </a>
                 </p>
-				<center><image src="img/fig6-BiNoMaP-MotionPattern.jpg" width="800px" class="img-responsive" alt="overview"></center>
-				<center><video id="v0" width="800px" autoplay loop muted controls><source src="videos/BiNoMaP-OptimizationExample1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="800px" autoplay loop muted controls><source src="videos/BiNoMaP-OptimizationExample2.mp4" type="video/mp4" /></video></center>
-
+				<!-- <center><image src="img/fig6-BiNoMaP-MotionPattern.jpg" width="800px" class="img-responsive" alt="overview"></center> -->
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: center;">Example1: pivoting a bowl</td>
+						<td style="text-align: center;">Example2: wrapping a basket</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/BiNoMaP-OptimizationExample1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/BiNoMaP-OptimizationExample2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+				
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 
                 <p class="text-justify">
 					<strong>(Stage 3) Category-Level Primitive Parameterization.</strong> Our BiNoMaP allows the learned skill to adapt to other objects of the same category. Here is the example for achieving category-level generalization of <em>pivoting a bowl</em>. </a>
                 </p>
-				<center><video id="v0" width="800px" autoplay loop muted controls><source src="videos/BiNoMaP-PivotingBowlExample.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="800px" autoplay loop muted><source src="videos/BiNoMaP-PivotingBowlExample.mp4" type="video/mp4" /></video></center>
 
             </div>
         </div>
@@ -179,20 +194,20 @@
 					Here are examples of four non-prehensile skills instantiated with different tasks and diverse objects. More results of real robot rollouts can be found in below videos. </a>
                 </p>
 				<center><image src="img/fig7-BiNoMaP-SkillExamples.jpg" width="800px" class="img-responsive" alt="overview"></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingOrdCup1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingOrdCup2.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingMugCup1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingMugCup2.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBowl1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBowl2.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBox1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBox2.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBottle1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBottle2.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PushingBasket.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-WrappingBall.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-WrappingBasket1.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-WrappingBasket2.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PokingOrdCup1.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PokingOrdCup2.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PokingMugCup1.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PokingMugCup2.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PiovtingBowl1.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PiovtingBowl2.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PiovtingBox1.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PiovtingBox2.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PiovtingBottle1.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PiovtingBottle2.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-PushingBasket.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-WrappingBall.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-WrappingBasket1.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-WrappingBasket2.mp4" type="video/mp4" /></video></center>
 
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 				
@@ -201,9 +216,9 @@
                 </p>
 				<center><image src="img/fig8-BiNoMaP-NewDualArmRobot.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<center><image src="img/fig8-BiNoMaP-TransferredSkills.jpg" width="800px" class="img-responsive" alt="overview"></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-New-PiovtingBowl.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-New-WrappingBasket.mp4" type="video/mp4" /></video></center>
-				<center><video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-New-withInterference.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-New-PiovtingBowl.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-New-WrappingBasket.mp4" type="video/mp4" /></video></center>
+				<center><video id="v0" width="100%" autoplay loop muted><source src="videos/BiNoMaP-New-withInterference.mp4" type="video/mp4" /></video></center>
 				
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 				
