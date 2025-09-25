@@ -1,1 +1,257 @@
-BiNoMaP
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>BiNoMaP</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://hnuzhy.github.io/projects/BPJDet/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hnuzhy.github.io/projects/BiNoMaP/"/>
+    <meta property="og:title" content="BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives" />
+    <meta property="og:description" content="Non-prehensile manipulation, encompassing ungraspable actions such as pushing, poking, and pivoting, represents a critical yet underexplored domain in robotics due to its contact-rich and analytically intractable nature. In this work, we revisit this problem from two novel perspectives. First, we move beyond the usual single-arm setup and the strong assumption of favorable external dexterity such as walls, ramps, or edges. Instead, we advocate a generalizable dual-arm configuration and establish a suite of Bimanual Non-prehensile Manipulation Primitives (BiNoMaP). Second, we depart from the prevailing RL-based paradigm and propose a three-stage, RL-free framework to learn non-prehensile skills. Specifically, we begin by extracting bimanual hand motion trajectories from video demonstrations. Due to visual inaccuracies and morphological gaps, these coarse trajectories are difficult to transfer directly to robotic end-effectors. To address this, we propose a geometry-aware post-optimization algorithm that refines raw motions into executable manipulation primitives that conform to specific motion patterns. Beyond instance-level reproduction, we further enable category-level generalization by parameterizing the learned primitives with object-relevant geometric attributes, particularly size, resulting in adaptable and general parameterized manipulation primitives. We validate BiNoMaP across a range of representative bimanual tasks and diverse object categories, demonstrating its effectiveness, efficiency, versatility, and superior generalization capability. "/>
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-10 col-md-offset-1 text-center">
+                BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives</br> 
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://hnuzhy.github.io">Huayi Zhou</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen
+                    </li>
+                    <li>
+                        <a href="http://kuijia.site">Kui Jia</a>
+                        </br>The Chinese University of Hong Kong, Shenzhen; DexForce, Shenzhen
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="BiNoMaP.pdf">
+                            <image src="img/logo_document.png" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+						<li>
+                            <a href="https://arxiv.org/abs/2509.xxxxx">
+                            <image src="img/logo_arXiv.png" height="50px">
+                                <h4><strong>arXiv</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/hnuzhy/">
+                            <image src="img/logo_github.png" height="50px">
+                                <h4><strong>Code (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+					Non-prehensile manipulation, encompassing ungraspable actions such as pushing, poking, and pivoting, represents a critical yet underexplored domain in robotics due to its contact-rich and analytically intractable nature. In this work, we revisit this problem from two novel perspectives. First, we move beyond the usual single-arm setup and the strong assumption of favorable external dexterity such as walls, ramps, or edges. Instead, we advocate a generalizable dual-arm configuration and establish a suite of Bimanual Non-prehensile Manipulation Primitives (BiNoMaP). Second, we depart from the prevailing RL-based paradigm and propose a three-stage, RL-free framework to learn non-prehensile skills. Specifically, we begin by extracting bimanual hand motion trajectories from video demonstrations. Due to visual inaccuracies and morphological gaps, these coarse trajectories are difficult to transfer directly to robotic end-effectors. To address this, we propose a geometry-aware post-optimization algorithm that refines raw motions into executable manipulation primitives that conform to specific motion patterns. Beyond instance-level reproduction, we further enable category-level generalization by parameterizing the learned primitives with object-relevant geometric attributes, particularly size, resulting in adaptable and general parameterized manipulation primitives. We validate BiNoMaP across a range of representative bimanual tasks and diverse object categories, demonstrating its effectiveness, efficiency, versatility, and superior generalization capability.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+    		<div class="col-md-10 col-md-offset-1">
+				<h3>
+                    ▶ Overview and Framework of BiNoMaP
+                </h3>
+                <p class="text-justify">
+					Our contributions in this research are threefold: <strong>(1)</strong> We propose the first RL-free framework for learning Bimanual Non-Prehensile Manipulation Primitives directly from human video demonstrations. <strong>(2)</strong> We introduce a parameterization scheme that enables category-level generalization of non-prehensile skills across diverse object instances. <strong>(3)</strong> We demonstrate the effectiveness, efficiency, versatility, and generality of BiNoMaP across a variety of tasks, objects, and strong baselines.</a>
+                </p>
+				<center><image src="img/fig1-BiNoMaP-overview.png" width="800px" class="img-responsive" alt="overview"></center>
+				<p class="text-justify">
+					<strong>Bi</strong>manual <strong>No</strong>n-Prehensile <strong>Ma</strong>nipulation <strong>P</strong>rimitives (<strong>BiNoMaP</strong>). (<em>Left</em>) We propose to extract coarse hand trajectories of non-prehensile skills from human video demonstrations, and then refine and optimize them to the dual-arm robot. These reproduced skills can be further parameterized from instance-level to category-level. (<em>Right</em>) We extensively validated BiNoMaP on four skills (e.g., poking, pivoting, pushing, and wrapping) involving a variety of objects.</a>
+                </p>
+				<center><image src="img/fig2-BiNoMaP-framework.png" width="800px" class="img-responsive" alt="overview"></center>
+				<p class="text-justify">
+					<strong>BiNoMaP</strong> framework. (1) The first stage leverages strong priors from hand demonstrations to obtain coarse dual-arm trajectories for non-prehensile tasks. (2) The second stage refines these trajectories to mitigate multi-source noise and improve execution stability. (3) The final stage generalizes learned skills to novel objects within the same category by parameterizing primitives.</a>
+                </p>
+				
+			</div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    ▶ Implementation Details of the Three-Stage BiNoMaP
+                </h3>
+				<p class="text-justify">
+					<strong>Hardware:</strong> the fixed-base dual-arm manipulator platform + a Kingfisher R-6000 binocular camera.
+					<strong>Tasks:</strong> four representative skills, including <em>poking</em>, <em>pivoting</em>, <em>pushing</em>, and <em>wrapping</em>.</a>
+                </p>
+				<center><image src="img/fig3-BiNoMaP-Hardware+Tasks.jpg" width="850px" class="img-responsive" alt="overview"></center>
+
+				<p class="text-justify">
+					<strong>Object Assets:</strong> The object assets involved in our selected four non-prehensile skills and eight bimanual manipulation tasks. All objects have been scaled down proportionally.</a>
+                </p>
+				<center><image src="img/fig4-BiNoMaP-ObjectAssets.png" width="850px" class="img-responsive" alt="overview"></center>
+
+				
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+
+                <p class="text-justify">
+					<strong>(Stage 1) Bimanual Hand Trajectory Extraction.</strong> 3D Hand Reconstruction from Videos & Hand-to-Robot Trajectory Extraction. From top to down are <em>dynamic extraciton visualization</em>, <em>final trajectory visualization</em>, and <em>manually specify start and end frames</em>. </a>
+                </p>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-HandTrajsVideo.mp4" type="video/mp4" /></video>
+				<center><image src="img/fig5-BiNoMaP-HandTrajsFinal.jpg" width="650px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/fig5-BiNoMaP-StartEndFrames.jpg" width="650px" class="img-responsive" alt="overview"></center>
+
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+
+                <p class="text-justify">
+					<strong>(Stage 2) Coarse-to-Fine Motion Post-Optimization.</strong> Motion Smoothness Optimization & Geometry-Aware Iterative Contact Adjustment. From top to down are <em>predefined motion patterns for four skills</em>, and two examples for the <em>dynamic process of trajectory refinement</em>. </a>
+                </p>
+				<center><image src="img/fig6-BiNoMaP-MotionPattern.jpg" width="650px" class="img-responsive" alt="overview"></center>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-OptimizationExample1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-OptimizationExample2.mp4" type="video/mp4" /></video>
+
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+
+                <p class="text-justify">
+					<strong>(Stage 3) Category-Level Primitive Parameterization.</strong> Our BiNoMaP allows the learned skill to adapt to other objects of the same category. Here is the example for achieving category-level generalization of <em>pivoting a bowl</em>. </a>
+                </p>
+				<center><image src="img/fig6-BiNoMaP-MotionPattern.jpg" width="650px" class="img-responsive" alt="overview"></center>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PivotingBowlExample.mp4" type="video/mp4" /></video>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+    		<div class="col-md-10 col-md-offset-1">	
+				<h3>
+                    ▶ Visualization and Video Records of Real Robot Rollouts
+                </h3>
+                <p class="text-justify">
+					Here are examples of four non-prehensile skills instantiated with different tasks and diverse objects. More results of real robot rollouts can be found in below videos. </a>
+                </p>
+				<center><image src="img/fig7-BiNoMaP-SkillExamples.jpg" width="800px" class="img-responsive" alt="overview"></center>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingOrdCup1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingOrdCup2.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingMugCup1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PokingMugCup2.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBowl1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBowl2.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBox1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBox2.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBottle1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PiovtingBottle2.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-PushingBasket.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-WrappingBall.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-WrappingBasket1.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-WrappingBasket2.mp4" type="video/mp4" /></video>
+
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+                <p class="text-justify">
+					Here are examples for <em>cross-embodiment transferring</em> of BiNoMaP into a humanoid dual-arm robot. We have transferred two learned skills (<em>pivoting a bowl</em> and <em>wrapping a basket</em>). </a>
+                </p>
+				<center><image src="img/fig8-BiNoMaP-NewDualArmRobot.jpg" width="800px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/fig8-BiNoMaP-TransferredSkills.jpg" width="800px" class="img-responsive" alt="overview"></center>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-New-PiovtingBowl.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-New-WrappingBasket.mp4" type="video/mp4" /></video>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-New-withInterference.mp4" type="video/mp4" /></video>
+				
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+                <p class="text-justify">
+					Here are examples showing the <em>compositionality</em> of learned skills via BiNoMaP for three downstream applications (e.g., <em>pre-grasping</em>, <em>rearrangement</em>, and <em>error recovery</em>). </a>
+                </p>	
+				<center><image src="img/fig9-BiNoMaP-Applications.jpg" width="800px" class="img-responsive" alt="overview"></center>
+				<video id="v0" width="100%" autoplay loop muted controls><source src="videos/BiNoMaP-DownstreamApplications.mp4" type="video/mp4" /></video>
+
+			</div>
+        </div>
+		
+
+			
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{zhou2025binomap,
+	title={BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives},
+	author={Huayi Zhou, Kui Jia},
+	journal={arXiv preprint arXiv:2509.xxxxxx},
+	year={2025}
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                We acknowledge the providers of various hardware used in this project, including the <a href="https://www.aubo-cobot.com/public/i5product3">Aubo-i5 robotic arm</a>, <a href="https://www.rokae.com/en/product/show/545/xMateCR.html">Rokae xMate CR7 robotic arm</a>, <a href="https://en.dh-robotics.com/product/pgi">DH gripper PGI-80-80</a>, <a href="https://www.jodell-robotics.com/product-detail?id=5">Jodell Robotics RG75-300</a>, and <a href="https://dexforce-3dvision.com/productinfo/1022811.html">kingfisher binocular camera</a>. 
+                    <br><br>
+                The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+		
+    </div>
+	
+</body>
+</html>
+
