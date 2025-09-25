@@ -1,6 +1,6 @@
 # My Personal Projects
 
-* [**BiNoMaP(arXiv 2024.09)** BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives](https://hnuzhy.github.io/projects/BiNoMaP)
+* [**BiNoMaP(arXiv 2025.09)** BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives](https://hnuzhy.github.io/projects/BiNoMaP)
 
 * [**YOTO++(year 2025.06)** YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
 
