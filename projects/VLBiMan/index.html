@@ -17,8 +17,8 @@
     <meta property="og:image:height" content="840">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hnuzhy.github.io/projects/VLBiMan/"/>
-    <meta property="og:title" content="Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Manipulation" />
-    <meta property="og:description" content="Achieving generalizable bimanual manipulation requires systems that learn efficiently from minimal human input while adapting to real-world uncertainties. Current approaches face a dilemma: imitation policy learning demands exhaustive demonstrations to handle task variations, while modular methods lack flexibility in dynamic environments. We propose a framework that extracts reusable skills from a single human example through methodical decomposition, which preserves invariant primitives as task anchors while dynamically adapts adjustable components via vision-language grounding. This adaptation mechanism resolves scene ambiguities caused by background changing, object repositioning, or visual clutters without policy retraining, leveraging semantic scene parsing and geometric feasibility constraints. Crucially, the system inherits human-like hybrid control capabilities, enabling mixed drive of both arms synchronously and asynchronously. Experiments validate the framework across diverse tasks, including tool-use and multi-object manipulation, demonstrating three key advances: (1) significant reduction in demonstration requirements compared to imitation baselines, (2) compositional generalization through atomic skill splicing for long-horizon tasks, and (3) robustness to new similar objects and external dynamic interference. By bridging human demonstration priors with vision-language grounded adaptation, our work enables dual-arm systems to autonomously adapt to environmental changes while preserving spatiotemporal coordination, which is a critical step toward practical deployment in unstructured settings. "/>
+    <meta property="og:title" content="VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Robotic Bimanual Manipulation" />
+    <meta property="og:description" content="Achieving generalizable bimanual manipulation requires systems that can learn efficiently from minimal human input while adapting to real-world uncertainties and diverse embodiments. Existing approaches face a dilemma: imitation policy learning demands extensive demonstrations to cover task variations, while modular methods often lack flexibility in dynamic scenes. We introduce VLBiMan, a framework that derives reusable skills from a single human example through task-aware decomposition, preserving invariant primitives as anchors while dynamically adapting adjustable components via vision-language grounding. This adaptation mechanism resolves scene ambiguities caused by background changes, object repositioning, or visual clutter without policy retraining, leveraging semantic parsing and geometric feasibility constraints. Moreover, the system inherits human-like hybrid control capabilities, enabling mixed synchronous and asynchronous use of both arms. Extensive experiments validate VLBiMan across tool-use and multi-object tasks, demonstrating: (1) a drastic reduction in demonstration requirements compared to imitation baselines, (2) compositional generalization through atomic skill splicing for long-horizon tasks, (3) robustness to novel but semantically similar objects and external disturbances, and (4) strong cross-embodiment transfer, showing that skills learned from human demonstrations can be instantiated on different robotic platforms without retraining. By bridging human priors with vision-language anchored adaptation, our work takes a step toward practical and versatile dual-arm manipulation in unstructured settings. "/>
 
 
 
@@ -44,7 +44,7 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-10 col-md-offset-1 text-center">
-                Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Manipulation</br> 
+                VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Robotic Bimanual Manipulation</br> 
             </h2>
         </div>
         <div class="row">
@@ -73,7 +73,7 @@
                             </a>
                         </li>
 						<li>
-                            <a href="https://arxiv.org/abs/2507.xxxxx">
+                            <a href="https://arxiv.org/abs/2509.xxxxx">
                             <image src="img/logo_arXiv.png" height="50px">
                                 <h4><strong>arXiv</strong></h4>
                             </a>
@@ -95,32 +95,31 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-					Achieving generalizable bimanual manipulation requires systems that learn efficiently from minimal human input while adapting to real-world uncertainties. Current approaches face a dilemma: imitation policy learning demands exhaustive demonstrations to handle task variations, while modular methods lack flexibility in dynamic environments. We propose a framework that extracts reusable skills from a single human example through methodical decomposition, which preserves invariant primitives as task anchors while dynamically adapts adjustable components via vision-language grounding. This adaptation mechanism resolves scene ambiguities caused by background changing, object repositioning, or visual clutters without policy retraining, leveraging semantic scene parsing and geometric feasibility constraints. Crucially, the system inherits human-like hybrid control capabilities, enabling mixed drive of both arms synchronously and asynchronously. Experiments validate the framework across diverse tasks, including tool-use and multi-object manipulation, demonstrating three key advances: (1) significant reduction in demonstration requirements compared to imitation baselines, (2) compositional generalization through atomic skill splicing for long-horizon tasks, and (3) robustness to new similar objects and external dynamic interference. By bridging human demonstration priors with vision-language grounded adaptation, our work enables dual-arm systems to autonomously adapt to environmental changes while preserving spatiotemporal coordination, which is a critical step toward practical deployment in unstructured settings.
+					Achieving generalizable bimanual manipulation requires systems that can learn efficiently from minimal human input while adapting to real-world uncertainties and diverse embodiments. Existing approaches face a dilemma: imitation policy learning demands extensive demonstrations to cover task variations, while modular methods often lack flexibility in dynamic scenes. We introduce VLBiMan, a framework that derives reusable skills from a single human example through task-aware decomposition, preserving invariant primitives as anchors while dynamically adapting adjustable components via vision-language grounding. This adaptation mechanism resolves scene ambiguities caused by background changes, object repositioning, or visual clutter without policy retraining, leveraging semantic parsing and geometric feasibility constraints. Moreover, the system inherits human-like hybrid control capabilities, enabling mixed synchronous and asynchronous use of both arms. Extensive experiments validate VLBiMan across tool-use and multi-object tasks, demonstrating: (1) a drastic reduction in demonstration requirements compared to imitation baselines, (2) compositional generalization through atomic skill splicing for long-horizon tasks, (3) robustness to novel but semantically similar objects and external disturbances, and (4) strong cross-embodiment transfer, showing that skills learned from human demonstrations can be instantiated on different robotic platforms without retraining. By bridging human priors with vision-language anchored adaptation, our work takes a step toward practical and versatile dual-arm manipulation in unstructured settings.
                 </p>
             </div>
         </div>
 
-
-
+Framework of \textbf{V}ision-\textbf{L}anguage Anchored \textbf{Bi}manual \textbf{Man}ipulation (\textbf{VLBiMan}). Taking the pouring water as an example, the paradigm consists of three stages (\textit{e.g.}, decomposition, adaptation, and composition) based on a given demonstration. VLBiMan can achieve generalization of unseen spatial placements and category-level new instances under the same task.
         <div class="row">
     		<div class="col-md-10 col-md-offset-1">
 				<h3>
                     ▶ Overview and Framework of VLBiMan
                 </h3>
                 <p class="text-justify">
-					Our contributions in this research are threefold: <strong>(1)</strong> We propose VLBiMan, a novel framework that enables generalizable bimanual manipulation through one-shot demonstration and vision-language anchoring, without retraining. <strong>(2)</strong> We introduce a task-aware motion decomposition and adaptation mechanism, allowing for effective reuse of invariant sub-skills via object-centric anchors derived from VLMs. <strong>(3)</strong> We demonstrate the effectiveness of VLBiMan across ten diverse bimanual manipulation tasks, significantly outperforming strong baselines in generalization and sample efficiency.</a>
+					Our contributions in this research are threefold: <strong>(1)</strong> We propose VLBiMan, a novel framework that enables generalizable bimanual manipulation through one-shot demonstration and vision-language anchoring, without retraining. <strong>(2)</strong> We introduce a task-aware motion decomposition and adaptation mechanism, which reuses invariant sub-skills via object-centric anchors from VLMs and supports cross-embodiment transfer from human demonstrations to different robotic embodiments. <strong>(3)</strong> We validate VLBiMan on ten diverse bimanual tasks, showing superior generalization, sample efficiency, and robustness compared to strong baselines.</a>
                 </p>
 				<center><image src="img/fig1-VLBiMan-overview.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
-					<strong>Vision-Language Anchored Bimanual Manipulation (VLBiMan).</strong> <em>Left</em>: Taking pouring water as an example, we sketch the entire process of VLBiMan, including task-aware decomposition, novel scene adaptation, and autonomous trajectory composition, based on the one-shot demonstration. <em>Right</em>: Supported by VLBiMan, we have achieved generalizable bimanual manipulation on a variety of complex contact-rich tasks without retraining, robustly coping with diverse scenarios such as environmental changes, dynamic interference, and advanced tool use. </a>
+					<strong>Vision-Language Anchored Bimanual Manipulation (VLBiMan).</strong> <em>Left</em>: Taking pouring water as an example, we sketch the entire process of VLBiMan based on the one-shot demonstration. <em>Right</em>: VLBiMan can achieve generalizable bimanual manipulation on a variety of complex contact-rich tasks without retraining, robustly coping with diverse scenarios. </a>
                 </p>
 				<center><image src="img/fig2-VLBiMan-framework.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
-					<strong>Detailed framework of VLBiMan.</strong> Taking the <em>pouring water</em> task as an example, we illustrate this paradigm consisting of three core stages (e.g., decomposition, adaptation, and composition) based on a given demonstration. By applying <strong>VLBiMan</strong>, we can achieve generalization of unseen spatial placements and category-level new instances under the same task.</a>
+					<strong>Detailed framework of VLBiMan.</strong>  Taking the pouring water as an example, the paradigm consists of three stages (e.g., decomposition, adaptation, and composition) based on a given demonstration. VLBiMan can achieve generalization of unseen spatial placements and category-level new instances under the same task.</a>
                 </p>
 				<center><image src="img/fig3-representative-points.jpg" width="800px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
-					Illustrations of <strong>selecting representative points</strong> of manipulated objects in three increasingly difficult tasks: <em>pouring</em> (left), <em>reorient+unscrew</em> (middle) and <em>tool-use:spoon</em> (right). These representative points will be used to calculate the change in position and orientation of the newly placed object.</a>
+					Illustrations of <strong>representative points</strong> for manipulated objects in three tasks:  <em>pouring</em> (left), <em>reorient+unscrew</em> (middle) and <em>tool-use:spoon</em> (right). These points will be used to calculate the change in object position and orientation (not always required).</a>
                 </p>
 				
 			</div>
@@ -144,7 +143,7 @@
                 </p>
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
                 <p class="text-justify">
-					<strong>Baselines and Metric.</strong> For each task setting, we conduct 20 trials, where objects are randomly located or replaced, and the success rate will be reported. For baselines, we compare to <strong>ReKep</strong> based on VFMs (<strong>SAM</strong> and <strong>DINOv2</strong>) and <strong>GPT-4o</strong>, as well as <strong>Robot-ABC</strong> based on keypoint affordance prediction with using <strong>AnyGrasp</strong> for initial grasping (After which, the remaining trajectory is obtained by trivial modules combination). </a>
+					<strong>Baselines and Metric.</strong> For each task setting, we conduct 20 trials, where objects are randomly located or replaced, and the success rate will be reported. For baselines, we compare to <strong>ReKep</strong> based on VFMs (<strong>SAM</strong> and <strong>DINOv2</strong>) and <strong>GPT-4o</strong>, as well as <strong>Robot-ABC</strong> based on keypoint affordance prediction with using <strong>AnyGrasp</strong> for initial grasping (After which, the remaining trajectory is obtained by trivial modules combination). Besides, for a convincing comparison, an enhanced <strong>ReKep+</strong> is introduced, where we inject an oracle-level initial grasp label to mitigate the impact of noisy perception. We also adapt two one-shot single-arm manipulation methods <strong>Mechanisms</strong> and <strong>MAGIC</strong> for our dual-arm tasks.</a>
                 </p>
                 <p class="text-justify">
 					In experiments, we aim to answer following research questions: <strong>(1)</strong> <em>How well does our framework automatically formulate and synthesize bimanual manipulation behaviors?</em> <strong>(2)</strong> <em>Can our method generalize to novel scenarios and achieve effective combination of skills?</em> <strong>(3)</strong> <em>How do individual components contribute to the effectiveness and robustness of our system?</em> </a>
@@ -174,7 +173,9 @@
                 <p class="text-justify">
 					Above is the visualization of all ten tasks executed on real robots. They are designed to validate different aspects, including <strong>ⓐ</strong> six dual-arm primary skills, <strong>ⓑ</strong> combination of basic skills for two long-horizon tasks, and <strong>ⓒ</strong> exploration of multi-stage spatiotemporal dependencies in two tool-use tasks. </a>
                 </p>
-				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+				<image src="img/gray_line_thick.jpg" class="img-responsive" alt="overview">
+				
                 <p class="text-justify">
 					<strong>Video collection of real robot deployments (with human dynamic interference).</strong> The central area of each video shows manipulated objects involved in each task. All ten tasks include <em>plugpen</em>, <em>inserting</em>, <em>unscrew</em>, <em>pouring</em>, <em>pressing</em>, <em>reorient</em>, <em>reorient+unscrew</em>, <em>unscrew+pouring</em>, <em>tool-use spoon</em> and <em>tool-use funnel</em>. </a>
                 </p>
@@ -260,7 +261,9 @@
 						</td>
 					</tr>
 				</table>
-				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+				<image src="img/gray_line_thick.jpg" class="img-responsive" alt="overview">
+				
                 <p class="text-justify">
 					<strong>Good robustness of VLBiMan to lighting changes.</strong> Below videos comparison reveals the impact of uneven lighting on the robustness of six basic bimanual tasks (still with interference). As can be seen, our solution VLBiMan combined with VLMs is robust to uneven lighting.</a>
 				</p>
@@ -283,7 +286,9 @@
 						</td>
 					</tr>
 				</table>
-				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+				<image src="img/gray_line_thick.jpg" class="img-responsive" alt="overview">
+				
                 <p class="text-justify">
 					<strong>Efficient synchronous dual-arm movement.</strong> Below is comparison of the time consumption for asynchronous or synchronous execution of all ten tasks. We also created a dynamic comparison chart of all ten tasks into one page slice for quick viewing. The coordination and synchronization of two arms can obviously improve manipulation efficiency. We observed time savings of varying magnitudes across all ten tasks, yielding <em>an average improvement in execution efficiency of approximately 22%</em>.</a>
 				</p>
@@ -365,7 +370,36 @@
 						<td style="text-align: center;"></td>
 					</tr>
 				</table>
-				<center><image src="img/time-cost-stat.jpg" width="800px" class="img-responsive" alt="overview"></center>
+				<!-- <center><image src="img/time-cost-stat.jpg" width="800px" class="img-responsive" alt="overview"></center> -->
+						
+				<image src="img/gray_line_thick.jpg" class="img-responsive" alt="overview">		
+				
+                <p class="text-justify">
+					<strong>Cross-Embodiment Transferability of VLBiMan.</strong> To further assess the generalization ability of VLBiMan, we investigate its cross-embodiment transferability. Specifically, we evaluate how a one-shot demonstration collected from a human demonstrator can be transferred to a robotic embodiment with different kinematic and actuation constraints. We report both qualitative visualizations and quantitative results, focusing on four representative bimanual tasks:  <em>inserting</em>,  <em>unscrew</em>,  <em>pouring</em>, and <em>reorient</em>.</a>
+				</p>			
+				<center><image src="img/fig6-new-humanoid-robot.jpg" width="700px" class="img-responsive" alt="overview"></center>
+                <p class="text-justify">
+					Below is video collection of the humanoid robot deployments (with dynamic interference + synchronization).</a>
+				</p>	
+				
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: center;">inserting / unscrew / pouring </td>
+						<td style="text-align: center;">reorient / unscrew + pouring </td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/New_Humanoid_real_rollouts1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/New_Humanoid_real_rollouts2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
 				
 			</div>
         </div>
@@ -379,10 +413,10 @@
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@article{zhou2025vision,
-	title={Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Manipulation},
+@article{zhou2025vlbiman,
+	title={VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Robotic Bimanual Manipulation},
 	author={Huayi Zhou, Kui Jia},
-	journal={arXiv preprint arXiv:2507.xxxxxx},
+	journal={arXiv preprint arXiv:2509.xxxxxx},
 	year={2025}
 }
                     </textarea>
@@ -396,7 +430,7 @@
                     Acknowledgements
                 </h3>
                 <p class="text-justify">
-                We acknowledge the providers of various hardware used in this project, including the <a href="https://www.aubo-cobot.com/public/i5product3">Aubo-i5 robotic arm</a>, <a href="https://en.dh-robotics.com/product/pgi">DH gripper PGI-80-80</a>, and <a href="https://dexforce-3dvision.com/productinfo/1022811.html">kingfisher binocular camera</a>. 
+                We acknowledge the providers of various hardware used in this project, including the <a href="https://www.aubo-cobot.com/public/i5product3">Aubo-i5 robotic arm</a>, <a href="https://www.rokae.com/en/product/show/545/xMateCR.html">Rokae xMate CR7 robotic arm</a>, <a href="https://en.dh-robotics.com/product/pgi">DH gripper PGI-80-80</a>, <a href="https://www.jodell-robotics.com/product-detail?id=5">Jodell Robotics RG75-300</a>, and <a href="https://dexforce-3dvision.com/productinfo/1022811.html">kingfisher binocular camera</a>. 
                     <br><br>
                 The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
                 </p>
