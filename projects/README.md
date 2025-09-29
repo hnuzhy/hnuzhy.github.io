@@ -2,7 +2,7 @@
 
 * [**BiDemoSyn(year 2025.09)** One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
 
-* [**VLBiMan(arXiv 2025.09)** VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Robotic Bimanual Manipulation](https://hnuzhy.github.io/projects/VLBiMan)
+* [**VLBiMan(arXiv 2025.09)** VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](https://hnuzhy.github.io/projects/VLBiMan)
 
 * [**BiNoMaP(arXiv 2025.09)** BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives](https://hnuzhy.github.io/projects/BiNoMaP)
 
