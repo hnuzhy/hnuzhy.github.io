@@ -40,7 +40,86 @@
           </td>
         </tr>
         </tbody></table>
+          
 
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <h2>Research Slides</h2>
+            <style>
+                /* 外部容器：隐藏溢出部分 */
+                .scroll-container {
+                    width: 960px;
+                    overflow: hidden;
+                    background: #f0f0f0;
+                    white-space: nowrap; /* 保证内容在一行显示 */
+                    position: relative;
+                }
+                /* 滚动轨道 */
+                .scroll-track {
+                    display: inline-block;
+                    animation: scroll-left 60s linear infinite; /* 60s决定速度，越小越快 */
+                }
+                /* 鼠标悬停时暂停 (可选) */
+                .scroll-container:hover .scroll-track {
+                    animation-play-state: paused;
+                }
+                /* 内容项样式 */
+                .scroll-item {
+                    display: inline-block;
+                    width: 352px; /* 根据你的媒体尺寸调整 */
+                    height: 198px;
+                    margin-right: 20px;
+                    vertical-align: middle;
+                    background: #fff;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                .scroll-item img, 
+                .scroll-item video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+        
+                /* 关键帧动画：向左移动 50% (因为内容复制了一份，移动一半正好无缝衔接) */
+                @keyframes scroll-left {
+                    0% {transform: translateX(0);}
+                    100% {transform: translateX(-50%);}
+                }
+            </style> 
+            
+            <div class="scroll-container">
+              <div class="scroll-track">
+                <div class="scroll-item"><video src="./projects/BPJDet/img/teaser.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><video src="./projects/SemiUHPE/img/teaser_video.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/YOTO/img/framework.png" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/YOTO/video/eval_pouring_slim.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/YOTOPlus/img/teaserV2.jpg" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/YOTOPlus/video/ts1_spoon_vis_slim.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/VLBiMan/img/fig1-VLBiMan-overview.jpg" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/VLBiMan/videos/VLBiMan-Teaser-slim.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/BiNoMaP/img/fig2-BiNoMaP-framework.png" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/BiNoMaP/videos/BiNoMaP-Teaser2-slim.mp4" autoplay loop muted playsinline></video></div>
+
+                <div class="scroll-item"><video src="./projects/BPJDet/img/teaser.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><video src="./projects/SemiUHPE/img/teaser_video.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/YOTO/img/framework.png" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/YOTO/video/eval_pouring_slim.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/YOTOPlus/img/teaserV2.jpg" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/YOTOPlus/video/ts1_spoon_vis_slim.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/VLBiMan/img/fig1-VLBiMan-overview.jpg" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/VLBiMan/videos/VLBiMan-Teaser-slim.mp4" autoplay loop muted playsinline></video></div>
+                <div class="scroll-item"><img src="./projects/BiNoMaP/img/fig2-BiNoMaP-framework.png" alt="image"></div>
+                <div class="scroll-item"><video src="./projects/BiNoMaP/videos/BiNoMaP-Teaser2-slim.mp4" autoplay loop muted playsinline></video></div>
+              </div>
+            </div>
+            
+          </td>
+        </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
@@ -91,95 +170,7 @@
         </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <h2>Research Slides</h2>
-
-            <style>
-                /* 外部容器：隐藏溢出部分 */
-                .scroll-container {
-                    width: 960px;
-                    overflow: hidden;
-                    background: #f0f0f0;
-                    white-space: nowrap; /* 保证内容在一行显示 */
-                    position: relative;
-                }
-        
-                /* 滚动轨道 */
-                .scroll-track {
-                    display: inline-block;
-                    animation: scroll-left 50s linear infinite; /* 50s决定速度，越小越快 */
-                }
-        
-                /* 鼠标悬停时暂停 (可选) */
-                .scroll-container:hover .scroll-track {
-                    animation-play-state: paused;
-                }
-        
-                /* 内容项样式 */
-                .scroll-item {
-                    display: inline-block;
-                    width: 352px; /* 根据你的媒体尺寸调整 */
-                    height: 198px;
-                    margin-right: 20px;
-                    vertical-align: middle;
-                    background: #fff;
-                    border-radius: 8px;
-                    overflow: hidden;
-                }
-        
-                .scroll-item img, 
-                .scroll-item video {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-        
-                /* 关键帧动画：向左移动 50% (因为内容复制了一份，移动一半正好无缝衔接) */
-                @keyframes scroll-left {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-            </style> 
-            
-            <div class="scroll-container">
-              <div class="scroll-track">
-                <div class="scroll-item"><video src="./projects/BPJDet/img/teaser.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><video src="./projects/SemiUHPE/img/teaser_video.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/YOTO/img/framework.png" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/YOTO/video/eval_pouring_slim.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/YOTOPlus/img/teaserV2.jpg" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/YOTOPlus/video/ts1_spoon_vis_slim.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/VLBiMan/img/fig1-VLBiMan-overview.jpg" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/VLBiMan/videos/VLBiMan-Teaser-slim.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/BiNoMaP/img/fig2-BiNoMaP-framework.png" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/BiNoMaP/videos/BiNoMaP-Teaser2-slim.mp4" autoplay loop muted playsinline></video></div>
-
-                <div class="scroll-item"><video src="./projects/BPJDet/img/teaser.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><video src="./projects/SemiUHPE/img/teaser_video.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/YOTO/img/framework.png" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/YOTO/video/eval_pouring_slim.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/YOTOPlus/img/teaserV2.jpg" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/YOTOPlus/video/ts1_spoon_vis_slim.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/VLBiMan/img/fig1-VLBiMan-overview.jpg" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/VLBiMan/videos/VLBiMan-Teaser-slim.mp4" autoplay loop muted playsinline></video></div>
-                <div class="scroll-item"><img src="./projects/BiNoMaP/img/fig2-BiNoMaP-framework.png" alt="image"></div>
-                <div class="scroll-item"><video src="./projects/BiNoMaP/videos/BiNoMaP-Teaser2-slim.mp4" autoplay loop muted playsinline></video></div>
-              </div>
-            </div>
-            
-          </td>
-        </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
