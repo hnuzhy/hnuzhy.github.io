@@ -131,11 +131,35 @@
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
             <h2>Research Slides</h2>
-            <p>
-              ● <strong>Conference Reviewer:</strong> AAAI'2026, WACV'2026, NeurIPS'2025, ACMMM'2025, ICCV'2025, ICME'2025, CVPR'2025, ICLR'2025, AAAI'2025, ACCV'2024, ECCV'2024, ICME'2024, CVPR'2024, ICCV'2023, CVPR'2023, ECCV'2022
-              <br>
-              ● <strong>Journal Reviewer:</strong> Transactions on Image Processing (TIP), Transactions on Circuits and Systems for Video Technology (TCSVT), Transactions on Intelligent Vehicles (TIV)
-            </p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtY254YmF4YmF4/xT4uQulXaV519/giphy.gif" />
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide"><img src="https://placehold.co/200x120/purple/white?text=3" /></div>
+                    <div class="swiper-slide"><img src="https://placehold.co/200x120/green/white?text=4" /></div>
+                    <div class="swiper-slide"><img src="https://placehold.co/200x120/red/white?text=5" /></div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    slidesPerView: "auto",   // 自动根据宽度计算显示数量
+                    spaceBetween: 20,        // 图片之间的间距 (px)
+                    loop: true,              // 开启无限循环
+                    speed: 3000,             // 滚动速度 (数值越大越慢)
+                    autoplay: {
+                        delay: 0,            // 0 延迟实现连续滚动
+                        disableOnInteraction: false, // 用户操作后不停止自动播放
+                    },
+                    // 如果需要鼠标悬停暂停，需要额外逻辑，Swiper默认行为是触摸暂停
+                });
+            </script>
           </td>
         </tr>
         </tbody></table>
@@ -153,7 +177,8 @@
           </td>
         </tr>
         </tbody></table>
-          
+
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
           <td style="padding:2.5%;width:100%;max-width:100%">
@@ -162,8 +187,7 @@
           </td>
         </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
+
           
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
         <tr>
