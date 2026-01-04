@@ -18,4 +18,5 @@
 ##### ● ✅ **SSDA-YOLO(CVIU 2023)** [SSDA-YOLO: Semi-supervised Domain Adaptive YOLO for Cross-Domain Object Detection](https://github.com/hnuzhy/SSDA-YOLO)
 ##### ● 🟦 **CONFETI(CVPRW 2023)** [Contrast, Stylize and Adapt: Unsupervised Contrastive Learning Framework for Domain Adaptive Semantic Segmentation](https://github.com/cxa9264/CONFETI)
 ##### ● 🟫 **DirectMHP(arXiv 2023.02)** [DirectMHP: Direct 2D Multi-Person Head Pose Estimation with Full-range Angles](https://hnuzhy.github.io/projects/DirectMHP)
+##### ● 🟫 **2DCubeHead(arXiv 2022.12)** [An Intuitive and Unconstrained 2D Cube Representation for Simultaneous Head Detection and Pose Estimation](https://arxiv.org/abs/2212.03623)
 ##### ● 🟫 **AIClass(years 2017~2021)** [AIClass: Automatic Teaching Assistance System Towards Classrooms for K-12 Education](https://hnuzhy.github.io/projects/AIClass)
