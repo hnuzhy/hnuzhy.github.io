@@ -1,7 +1,7 @@
 ### My Personal Projects
 
+##### 🟩 **VLBiMan(ICLR 2026)** [VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](https://hnuzhy.github.io/projects/VLBiMan)
 ##### ⬛ **BiDemoSyn(arXiv 2025.12)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
-##### ⬛ **VLBiMan(arXiv 2025.09)** [VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](https://hnuzhy.github.io/projects/VLBiMan)
 ##### ⬛ **BiNoMaP(arXiv 2025.09)** [BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives](https://hnuzhy.github.io/projects/BiNoMaP)
 ##### ⬛ **YOTO++(year 2025.06)** [YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
 ##### 🟦 **UnDAHand(ICANN 2025)** [Unsupervised Domain Adaptive Hand Mesh Reconstruction of 2D Images in the Wild](https://link.springer.com/chapter/10.1007/978-3-032-04546-1_19)
