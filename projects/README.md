@@ -1,5 +1,6 @@
 ### My Personal Projects
 
+##### 🟦 **HACMatch(CVIU 2026)** [HACMatch: Semi-Supervised Rotation Regression with Hardness-Aware Curriculum Pseudo Labeling](https://www.sciencedirect.com/science/article/pii/S1077314226001098)
 ##### 🟩 **VLBiMan(ICLR 2026)** [VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](https://hnuzhy.github.io/projects/VLBiMan)
 ##### ⬛ **BiDemoSyn(arXiv 2025.12)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
 ##### ⬛ **BiNoMaP(arXiv 2025.09)** [BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives](https://hnuzhy.github.io/projects/BiNoMaP)
