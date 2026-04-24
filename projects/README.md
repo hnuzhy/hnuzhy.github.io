@@ -1,11 +1,11 @@
 ### My Personal Projects & Publications
 `🟥`*`First Author`* | `🟦`*`Co-Author`* | `🟩`*`Accepted`* | `⬛`*`Pre-print`*
+##### 🟥🟩 **YOTO++(TPAMI 2026)** [YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
 ##### 🟦🟩 **HACMatch(CVIU 2026)** [HACMatch: Semi-Supervised Rotation Regression with Hardness-Aware Curriculum Pseudo Labeling](https://www.sciencedirect.com/science/article/pii/S1077314226001098)
 ##### 🟦⬛ **WildHand(year 2026.03)** [WildHand: Semi-Supervised 2D Hand Keypoint Detection in the Wild](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6365607)
 ##### 🟥🟩 **VLBiMan(ICLR 2026)** [VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](https://hnuzhy.github.io/projects/VLBiMan)
 ##### 🟥⬛ **BiDemoSyn(arXiv 2025.12)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
 ##### 🟥⬛ **BiNoMaP(arXiv 2025.09)** [BiNoMaP: Learning Category-Level Bimanual Non-Prehensile Manipulation Primitives](https://hnuzhy.github.io/projects/BiNoMaP)
-##### 🟥⬛ **YOTO++(year 2025.06)** [YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
 ##### 🟦🟩 **UnDAHand(ICANN 2025)** [Unsupervised Domain Adaptive Hand Mesh Reconstruction of 2D Images in the Wild](https://link.springer.com/chapter/10.1007/978-3-032-04546-1_19)
 ##### 🟦🟩 **DexScale(ICML 2025)** [DexScale: Automating Data Scaling for Sim2Real Generalizable Robot Control](https://edem-ai.github.io/dexscale.github.io/)
 ##### 🟦🟩 **GAT-Grasp(IROS 2025)** [GAT-Grasp: Gesture-Driven Affordance Transfer for Task-Aware Robotic Grasping](https://ieeexplore.ieee.org/document/11246111)
