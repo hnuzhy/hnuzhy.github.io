@@ -1,6 +1,7 @@
 ### My Personal Projects & Publications
 `🟥`*`First Author`* | `🟦`*`Co-Author`* | `🟩`*`Accepted`* | `⬛`*`Pre-print`*
 ##### 🟥🟩 **BiDemoSyn(RSS 2026)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
+##### 🟦🟩 **AgentChord(RSS 2026)** [From Reaction to Anticipation: Proactive Failure Recovery through Agentic Task Graph for Robotic Manipulation](https://shengxu.net/AgentChord/)
 ##### 🟥🟩 **YOTO++(TPAMI 2026)** [YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
 ##### 🟦🟩 **HACMatch(CVIU 2026)** [HACMatch: Semi-Supervised Rotation Regression with Hardness-Aware Curriculum Pseudo Labeling](https://www.sciencedirect.com/science/article/pii/S1077314226001098)
 ##### 🟦⬛ **WildHand(year 2026.03)** [WildHand: Semi-Supervised 2D Hand Keypoint Detection in the Wild](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6365607)
