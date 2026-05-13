@@ -1,4 +1,4 @@
-### Personal Projects & Publications
+### Personal Projects and Publications
 `🟥`*`First Author`* | `🟦`*`Co-Author`* | `🟩`*`Accepted`* | `⬛`*`Pre-print`*
 ##### 🟥🟩 **BiDemoSyn(RSS 2026)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
 ##### 🟦🟩 **AgentChord(RSS 2026)** [From Reaction to Anticipation: Proactive Failure Recovery through Agentic Task Graph for Robotic Manipulation](https://shengxu.net/AgentChord/)
