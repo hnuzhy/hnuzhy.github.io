@@ -1,5 +1,5 @@
 #### Personal Projects and Publications
-`🟥`*`First Author`* | `🟦`*`Co-Author`* | `🟩`*`Accepted`* | `⬛`*`Pre-print`* | `👀`*`Computer Vision`*  | `🤖`*`Embodied Robotics`*  
+`🟥 First Author` `or` `🟦 Co-Author` | `🟩 Accepted` `or` `⬛ Pre-print` | `👀 Computer Vision` `or` `🤖 Embodied Robotics` 
 ###### 🟥🟩🤖 **BiDemoSyn(RSS 2026)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
 ###### 🟦🟩🤖 **AgentChord(RSS 2026)** [From Reaction to Anticipation: Proactive Failure Recovery through Agentic Task Graph for Robotic Manipulation](https://shengxu.net/AgentChord/)
 ###### 🟥🟩🤖 **YOTO++(TPAMI 2026)** [YOTO++: Learning Long-Horizon Closed-Loop Bimanual Manipulation from One-Shot Human Video Demonstrations](https://hnuzhy.github.io/projects/YOTOPlus)
