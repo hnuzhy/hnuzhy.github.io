@@ -39,7 +39,7 @@
     
     <script src="js/app.js"></script>
     <script src="js/video_comparison.js"></script>
-	
+
 	<!--
 	https://docs.mathjax.org/en/latest/basic/mathematics.html 
 	https://mathjax.github.io/MathJax-demos-web/page/tex-chtml.html
@@ -65,15 +65,15 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-						<a href="https://hnuzhy.github.io">Huayi Zhou</a>$^{*\;1,2}$, Wei Gao$^{*\;1}$, Dekun Lu, Ruiji Liu, Zhanqi Zhang, Ziyang Zhang, Jian Chen, 
-						</br> Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, <a href="http://kuijia.site">Kui Jia</a>$^{\ddagger\;1,2}$
+						<a href="https://hnuzhy.github.io">Huayi Zhou</a>$^{*\;1,2}$, <a href="https://openreview.net/profile?id=~Wei_Gao10">Wei Gao</a>$^{*\;1}$, <a href="https://openreview.net/profile?id=~Dekun_Lu1">Dekun Lu</a>$^{1}$, <a href="https://openreview.net/profile?id=~Ruiji_Liu1">Ruiji Liu</a>$^{1}$, <a href="https://openreview.net/profile?id=~Zhanqi_Zhang2">Zhanqi Zhang</a>$^{1}$, <a href="https://openreview.net/profile?id=~Ziyang_Zhang15">Ziyang Zhang</a>$^{1}$, <a href="https://openreview.net/profile?id=~Jian_Chen6">Jian Chen</a>$^{1}$, 
+						</br> <a href="https://openreview.net/profile?id=~Wenlve_Zhou1">Wenlve Zhou</a>$^{1}$, <a href="https://openreview.net/profile?id=~Sheng_Xu8">Sheng Xu</a>$^{2}$, <a href="https://openreview.net/profile?id=~Shumin_Li2">Shumin Li</a>$^{1}$, <a href="https://openreview.net/profile?id=~Kangyi_Guo2">Kangyi Guo</a>$^{1}$, <a href="https://openreview.net/profile?id=~shichen_Xu2">Shichen Xu</a>$^{1}$, <a href="https://openreview.net/profile?id=~Zixin_Huang4">Zixin Huang</a>$^{1}$, <a href="https://openreview.net/profile?id=~Yongyi_Su1">Yongyi Su</a>$^{1}$, <a href="http://kuijia.site">Kui Jia</a>$^{\ddagger\;1,2}$
 						</br> $^{1}$DexForce Technology &ensp;&ensp; $^{2}$The Chinese University of Hong Kong, Shenzhen
 						</br> $^*$Equal Contribution &ensp;&ensp; $^{\ddagger}$Corresponding Author
                     </li>
                 </ul>
             </div>
         </div>
-  
+
 
         <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
@@ -191,7 +191,7 @@
                 </p>
 				
                 <p class="text-justify">
-					Our experiments address three core questions. <strong>Q1</strong>: <em>Is BiDemoSyn truly efficient and user-friendly?</em> <strong>Q2</strong>: <em>Does BiDemoSyn enable scalable visuomotor imitation learning?</em> <strong>Q3</strong>: <em>Does synthetic demonstrations generalize to spatial and object variations?</em> </a>
+					<strong>Quantitative Results on Simulation Benchmarks.</strong> We evaluate the performance of Dex-BEV against competitive VLA baselines, including $\pi_0$ and X-VLA, on the official and modified configurations of the LIBERO and RoboTwin-2.0 benchmarks. As summarized in <strong>Tab. 1</strong>, deploying a single set of network weights across vastly different platforms—the single-arm Franka for LIBERO and the dual-arm Agilex for RoboTwin—our framework achieves comparable success rates on LIBERO and significantly outperforms the state-of-the-art baselines on RoboTwin. Furthermore, under the highly challenging mutated setups where camera viewpoints, robot bases, and scene layouts are subjected to severe 6-DoF random perturbations, standard 2D VLA policies completely fail (yielding success rates below 10% as shown in <strong>Tab. 2</strong>). In sharp contrast, Dex-BEV maintains a robust and stable success rate of 89.9%, validating that our 3D spatial alignment and view-invariant BEV representations effectively absorb pose variations that present insurmountable bottlenecks for conventional 2D architectures. </a>
                 </p>
 				<center><image src="img/gray_line.jpg" class="img-responsive" width="720px" alt="overview"></center>
 				<center><image src="img/fig4-simulation-result1.jpg" width="720px" class="img-responsive" alt="overview"></center>
@@ -199,10 +199,7 @@
 				<center><image src="img/fig5-simulation-result2.jpg" width="720px" class="img-responsive" alt="overview"></center>
 
                 <p class="text-justify">
-					Above results have answered three questions raised earlier, demonstrating that BiDemoSyn can efficiently synthesize high-quality real-world demonstrations, enabling scalable and generalizable visuomotor policy training with minimal human input. <br>
-                    <strong>A1: The efficiency and usability of BiDemoSyn have obvious advantages over baselines.</strong> <br>
-					<strong>A2: Demonstrations obtained via BiDemoSyn can support scalable imitation learning.</strong> <br>
-					<strong>A3: Policies trained on BiDemoSyn data can achieve generalization to unseen variations.</strong> </a>
+					<strong>Comparative Performance on Real-World Hardware.</strong> To demonstrate the physical agility and embodiment-agnostic utility of Dex-BEV, we baseline our framework against industry-standard competitors ($\pi_0$ and X-VLA) across four distinct dual-arm hardware setups executing five challenging, long-horizon tasks involving articulated, deformable, and granular objects. The empirical results in <strong>Tab. 3</strong> demonstrate that Dex-BEV commands a commanding performance margin over all baselines, achieving unprecedented state-of-the-art success rates across all tasks (e.g., reaching 93.3% for <em>Agilex Fold Cloth</em>, 86.7% for <em>W1 Scoop Popcorn</em>, and 96.7% for <em>A1 Fold Cloth</em>). Crucially, while existing policies exhibit severe performance volatility under unexpected human-in-the-loop disturbances or novel object color/scale variations, Dex-BEV exhibits exceptional zero-shot out-of-distribution generalization and continuous error self-recovery. This stark contrast confirms that our framework successfully captures the underlying 3D spatial mechanics of complex bimanual coordination rather than merely memorizing localized 2D visual correlation patterns. </a>
                 </p>
 				<center><image src="img/gray_line.jpg" class="img-responsive" width="720px" alt="overview"></center>
 				<center><image src="img/fig6-realworld-result1.jpg" width="720px" class="img-responsive" alt="overview"></center>
@@ -217,64 +214,237 @@
 				<h3>
                     ▶ ③ Visualization and Analysis of Real-World Rollouts
                 </h3>
-				<center><image src="img/fig9-qualitative-results.jpg" width="900px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
-					Above is the visualization of all six bimanual tasks performed on real robots. All models are trained and tested under the ID evaluations. EquiBot is chosen as the visuomotor policy. Key dual-arm coordination movements associated with each task are partially enlarged for quick review.</a>
+					Below are four dual-arm platforms for conducting five real-world bimanual dexterous manipulation tasks. </a>
+                </p>
+				<center><image src="img/fig7-realworld-platforms.jpg" width="800px" class="img-responsive" alt="overview"></center>
+				
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+                <p class="text-justify">
+					<strong>[Task 1 & 2] Agilex Bimanual Evaluations:</strong> <em>Fold Mailer Box & Fold Cloth</em> </a>
                 </p>
 				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;"> <strong>[Task 1]</strong> <em>Fold Mailer Box</em> with the in-distribution (ID) </td></tr>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t1-plugpen.mp4" type="video/mp4" />
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-ID1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-ID2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-ID3.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t2-inserting.mp4" type="video/mp4" />
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-ID4.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
+					<tr><td style="text-align: left;"> <strong>[Task 1]</strong> <em>Fold Mailer Box</em> with unseen orientations (OOD) </td></tr>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t3-unscrew.mp4" type="video/mp4" />
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-OOD1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-OOD2.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t4-pouring.mp4" type="video/mp4" />
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-OOD3.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
+					<tr><td style="text-align: left;"> <strong>[Task 1]</strong> <em>Fold Mailer Box</em> with multiple times consecutively </td></tr>
 					<tr>
 						<td style="text-align: left;">
-						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t5-pressing.mp4" type="video/mp4" />
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-MTs3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-MTs4.mp4" type="video/mp4" />
 						</video>
 						</td>
 						<td style="text-align: right;">
-						<video id="v0" width="470px" autoplay loop muted>
-						  <source src="videos/real-rollout-t6-reorient.mp4" type="video/mp4" />
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T1-Agilex-FoldBox-MTs5.mp4" type="video/mp4" />
 						</video>
 						</td>
 					</tr>
 				</table>
-                <p class="text-justify">
-					We here supplement more qualitative videos of real robot rollouts. The blue rectangle boxes in each video are the corresponding given one-shot demonstrations. The red rectangle boxes are results of novel configurations (e.g., new placements or instances). All related videos have been sped up 2x for faster viewing and checking. These results underscore BiDemoSyn's ability to handle real-world complexities (such as mechanical tolerances and imperfect perception), while also exposing limitations in dynamic force modulation (e.g., over-pressing bottles or lids).</a>
-				</p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;"> <strong>[Task 2]</strong> <em>Fold Cloth</em> with the in-distribution (ID) </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-ID1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-ID2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-ID3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-ID4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;"> <strong>[Task 2]</strong> <em>Fold Cloth</em> with unseen colors/sizes (OOD) </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-OOD1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-OOD2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="312px" autoplay loop muted>
+						  <source src="videos/T2-Agilex-FoldCloth-OOD3.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+				
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
                 <p class="text-justify">
-					While policies trained with BiDemoSyn achieve high success rates, failure analysis reveals systematic challenges. Note that although the policy we trained is executed end-to-end (it establishes an implicit mapping from observations to action outputs), we can still align the analysis from the stage where its failure cases are located to find the core cause of the error. Finally, using the experimental results of EquiBot under out-of-distribution evaluations, we categorize failures into five types according to the task execution logic (mainly from the design module of BiDemoSyn):</a>
-				</p>
-				<center><image src="img/fig10-failure-cases-analysis.jpg" width="700px" class="img-responsive" alt="overview"></center>
+					<strong>[Task 3] DexForce W1 Humanoid Evaluations:</strong> <em>Scoop Popcorn</em> </a>
+                </p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;"> <strong>[Task 3]</strong> <em>Scoop Popcorn</em> with the in-distribution (ID) </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T3-W1-Hand-ScoopPopcorn-ID1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T3-W1-Hand-ScoopPopcorn-ID2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;"> <strong>[Task 3]</strong> <em>Scoop Popcorn</em> with dynamic interference (OOD) </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T3-W1-Hand-ScoopPopcorn-OOD1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T3-W1-Hand-ScoopPopcorn-OOD2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
                 <p class="text-justify">
-					As can be seen, the orientation estimation and initial grasp failures dominate, reflecting two core challenges: (1) current pose estimators struggle with symmetric or textureless objects (e.g., metal spoon or shovel), and (2) gripper-centric path planning lacks fine-grained contact modeling (e.g., avoiding pre-touch collisions for irregular shapes). Addressing these requires advances in category-agnostic pose estimation and short-horizon contact optimization, which are critical directions for our future work.</a>
-				</p>
+					<strong>[Task 4] DexForce W1 Humanoid Evaluations:</strong> <em>Handover Book</em> </a>
+                </p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;"> <strong>[Task 4]</strong> <em>Handover Book</em> with the in-distribution (ID) </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T4-W1-Gripper-HandoverBook-ID1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T4-W1-Gripper-HandoverBook-ID2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;"> <strong>[Task 4]</strong> <em>Handover Book</em> with dynamic interference (OOD) </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T4-W1-Gripper-HandoverBook-OOD1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T4-W1-Gripper-HandoverBook-OOD2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+                <p class="text-justify">
+					<strong>[Task 5] DexForce A1 Semi-Humanoid Evaluations:</strong> <em>Fold Cloth</em> </a>
+                </p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr><td style="text-align: left;"> <strong>[Task 5]</strong> <em>Fold Cloth</em> with the flat initial state </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T5-A1-Gripper-FoldCloth-Flat1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T5-A1-Gripper-FoldCloth-Flat2.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T5-A1-Gripper-FoldCloth-Flat3.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="235px" autoplay loop muted>
+						  <source src="videos/T5-A1-Gripper-FoldCloth-Flat4.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr><td style="text-align: left;"> <strong>[Task 5]</strong> <em>Fold Cloth</em> with the chaotic initial state </td></tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T5-A1-Gripper-FoldCloth-Chaotic1.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/T5-A1-Gripper-FoldCloth-Chaotic2.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
 				
 			</div>
         </div>
-		
-		
+
+
 					
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -285,7 +455,7 @@
                     <textarea id="bibtex" class="form-control" readonly>
 @article{zhou2026dexterity,
 	title={Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning},
-	author={Huayi Zhou*, Wei Gao*, Dekun Lu, Ruiji Liu, Zhanqi Zhang, Ziyang Zhang, Jian Chen, Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, Kui Jia},
+	author={Huayi Zhou, Wei Gao, Dekun Lu, Ruiji Liu, Zhanqi Zhang, Ziyang Zhang, Jian Chen, Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, Kui Jia},
 	journal={arXiv preprint arXiv:2606.xxxxx},
 	year={2026}
 }
@@ -302,7 +472,7 @@
                 <p class="text-justify">
 					This work was funded by the Key-Area Research and Development Program of Guangdong Province, China under Grant 2024B0101040004, and the Shenzhen Science and Technology Program under Grant KJZD20240903104008012 and ZDCY20250901113000001. <br>
 					Beyond that, this work was supported by the major leadership and directional guidance of Kui Jia. We sincerely thank all the contributors for their dedication: co-first authors Huayi Zhou and Wei Gao conceptualized the framework and drafted the manuscript, with Huayi Zhou conducting Agilex real-world experiments, and Wei Gao leading the simulation benchmarks, real-world deployment, and core data infrastructure; Dekun Lu and Jian Chen assisted with the data infrastructure and hardware testing; Ruiji Liu, Zhanqi Zhang, and Ziyang Zhang managed the real-robot evaluations on the A1 semi-humanoid and W1 humanoid configurations; Wenlve Zhou, Sheng Xu, and Yongyi Su contributed to text polishing and technical discussions; and Shumin Li, Kangyi Guo, Shichen Xu, and Zixin Huang supported the large-scale real-world teleoperation data collection. <br>
-                    <br><br>
+                    <br>
 					The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
                 </p>
             </div>
