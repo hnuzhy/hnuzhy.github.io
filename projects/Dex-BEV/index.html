@@ -1,1 +1,304 @@
-aaa
+
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Dex-BEV</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://hnuzhy.github.io/projects/BPJDet/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hnuzhy.github.io/projects/Dex-BEV/"/>
+    <meta property="og:title" content="Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning" />
+    <meta property="og:description" content="End-to-end manipulation policies, combined with web-scale pretrained Vision-Language Models (VLMs), show the promise for generalizable and dexterous robotic manipulation. However, they inherit two key limitations from 2D foundation models: 1) the reliance on 2D RGB inputs that ignores the intrinsically 3D nature of manipulation; and 2) the lack of spatial 3D alignment between input-output spaces as well as across diverse robot embodiments, camera setups, and trajectory datasets. In this paper, we present a series of contributions to address these issues. First, we introduce <em>aligned vertex map</em> and <em>vertex spectrum</em> — a pixel-wise 3D representation that elevates 2D visual inputs to 3D, using camera calibration and optional depth. This novel input representation marries 3D awareness with the generalization of 2D large VLMs. Then, we propose to align the inputs and outputs of manipulation policies by expressing per-pixel 3D information of each camera view and robot actions to a shared coordinate. Based on this, we designate a canonical <em>Bird's-Eye-View (BEV) alignment frame</em> and innovatively propose to construct BEV images, producing a view-invariant representation robust to camera pose variations. To enable training and evaluation at scale, we develop a comprehensive data processing pipeline to perform such alignments; we also introduce a novel temporal alignment scheme for trajectories across diverse robots, human operators, and datasets. These contributions collectively mitigate input and output spatial-temporal misalignments, improving the consistency and generalization for real-world manipulation. "/>
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+	
+	<script src="https://polyfill.io"></script>
+	<script id="MathJax-script" async src="https://jsdelivr.net"></script>
+	
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning</br> 
+				<!-- <small> arXiv 2026.06 (accepted by <font color="red"><strong>Robotics: Science and Systems (RSS) 2026</strong></font>) </small></br> -->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+						<a href="https://hnuzhy.github.io">Huayi Zhou$^{*\;1,2}$</a>, Wei Gao$^{*\;1}$, Dekun Lu, Ruiji Liu, Zhanqi Zhang, Ziyang Zhang, Jian Chen, Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, <a href="http://kuijia.site">Kui Jia</a>$^{\ddag\;1,2}$
+						</br> $^{1}$DexForce Technology    $^{2}$The Chinese University of Hong Kong, Shenzhen
+						</br> $^*$Equal Contribution    $^{\ddag}$Corresponding Author
+                    </li>
+                </ul>
+            </div>
+        </div>
+  
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="Dex-BEV.pdf">
+                            <image src="img/logo_document.png" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+						<li>
+                            <a href="https://arxiv.org/abs/2606.xxxxx">
+                            <image src="img/logo_arXiv.png" height="50px">
+                                <h4><strong>arXiv</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/hnuzhy/">
+                            <image src="img/logo_github.png" height="50px">
+                                <h4><strong>Code (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/hnuzhy/">
+                            <image src="img/logo_dataset.png" height="50px">
+                                <h4><strong>Dataset (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <video id="v0" width="100%" autoplay loop muted controls>
+				<source src="videos/teaserVideoSlim.mp4" type="video/mp4" />
+                </video>
+			</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+					End-to-end manipulation policies, combined with web-scale pretrained Vision-Language Models (VLMs), show the promise for generalizable and dexterous robotic manipulation. However, they inherit two key limitations from 2D foundation models: 1) the reliance on 2D RGB inputs that ignores the intrinsically 3D nature of manipulation; and 2) the lack of spatial 3D alignment between input-output spaces as well as across diverse robot embodiments, camera setups, and trajectory datasets. In this paper, we present a series of contributions to address these issues. First, we introduce <em>aligned vertex map</em> and <em>vertex spectrum</em> — a pixel-wise 3D representation that elevates 2D visual inputs to 3D, using camera calibration and optional depth. This novel input representation marries 3D awareness with the generalization of 2D large VLMs. Then, we propose to align the inputs and outputs of manipulation policies by expressing per-pixel 3D information of each camera view and robot actions to a shared coordinate. Based on this, we designate a canonical <em>Bird's-Eye-View (BEV) alignment frame</em> and innovatively propose to construct BEV images, producing a view-invariant representation robust to camera pose variations. To enable training and evaluation at scale, we develop a comprehensive data processing pipeline to perform such alignments; we also introduce a novel temporal alignment scheme for trajectories across diverse robots, human operators, and datasets. These contributions collectively mitigate input and output spatial-temporal misalignments, improving the consistency and generalization for real-world manipulation.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+    		<div class="col-md-10 col-md-offset-1">
+				<h3>
+                    ▶ Framework and Overview of Dexterity-BEV (Dex-BEV)
+                </h3>
+                <p class="text-justify">
+					We introduce <strong>Dexterity-BEV (Dex-BEV)</strong>, a series of technical and systematic contributions for manipulation policy learning that generalizes among different embodiments, camera views and datasets. In particular, we introduce 3D input representations that easily integrated with pretrained 2D VLMs; spatial alignment between multi-view cameras & robot actions; and temporal alignment between trajectories from different robots and/or tele-operators. These concepts lead to a comprehensive data processing pipeline and trajectory datasets aligned spatially and temporally.</a>
+                </p>
+				<center><image src="img/fig1-teaser.jpg" width="842px" class="img-responsive" alt="overview"></center>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				<p class="text-justify">
+					<strong>Dexterity-BEV (Dex-BEV) Framework.</strong> (a) We propose to construct BEV images and associated vertex maps towards invariance to different camera view points. Note that the synthesized BEV images for two vastly different camera poses are very similar to each other, and objects are located at almost identical pixel locations in BEV images. (b) An overview of Dex-BEV architecture. Please refer Sec. 3.3 of the main paper for a detailed explanation.</a>
+                </p>
+				<center><image src="img/fig2-framework.jpg" width="842px" class="img-responsive" alt="overview"></center>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				<p class="text-justify">
+					<strong>3D spatial alignment in our data processing pipeline.</strong> (a) We develop a customized GUI application for 3D alignment and visualization, as explained in Subsec. 3.4 of the main paper. In (a-f), we show the 3D alignment of representative public and internal datasets, including (a) <a href="https://libero-project.github.io/main.html">LIBERO</a>, (b) <a href="https://agibot-world.com/">Agibot-World</a> <a href="https://huggingface.co/datasets/agibot-world/AgiBotWorld-Alpha">Alpha</a>/<a href="https://huggingface.co/datasets/agibot-world/AgiBotWorld-Beta">Beta</a>, (c) <a href=" https://robotwin-platform.github.io/">RoboTwin 2.0</a>, (d) <a href="https://modelscope.cn/datasets/X-Humanoid/RoboMIND2.0">RoboMind 2.0</a> and our internal datasets (e-f). We also apply an unified TCP frame convention, as shown in these figures.</a>
+                </p>
+				<center><image src="img/fig3-datasets.jpg" width="842px" class="img-responsive" alt="overview"></center>
+				
+			</div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    ▶ ① The Customized GUI Application for Data Alignment
+                </h3>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="435px" autoplay loop muted>
+						  <source src="videos/DexBEV-GUIApplication.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="505px" autoplay loop muted>
+						  <source src="videos/DexBEV-BEVIllustration.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+				<p class="text-justify">
+					<strong>Left:</strong> The workflow demonstration of the developed customized GUI application for 3D alignment and visualization. The used dataset example comes from LIBERO. <strong>Right:</strong> The constructed BEV images and associated vertex maps towards invariance to different camera view points. The used dataset example also comes from LIBERO. </a>
+                </p>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    ▶ ② Training, Deployment and Evaluation of Dex-BEV
+                </h3>
+                <p class="text-justify">
+					Our evaluation aims to demonstrate that Dex-BEV provides a superior and more interpretable framework for dexterous robotic manipulation compared to existing 2D and 3D VLA paradigms. We systematically test its efficacy across diverse simulated benchmarks (including <a href="https://libero-project.github.io/main.html">LIBERO</a> and <a href=" https://robotwin-platform.github.io/">RoboTwin 2.0</a>) and four different real-world bimanual robotic platforms, focusing on its spatial reasoning capabilities and cross-embodiment generalization. The compared strong baselines mainly contain <a href="https://github.com/Physical-Intelligence/openpi">$\pi_0$</a> and <a href="https://github.com/2toinf/X-VLA">X-VLA</a> </a>
+                </p>
+				
+                <p class="text-justify">
+					Our experiments address three core questions. <strong>Q1</strong>: <em>Is BiDemoSyn truly efficient and user-friendly?</em> <strong>Q2</strong>: <em>Does BiDemoSyn enable scalable visuomotor imitation learning?</em> <strong>Q3</strong>: <em>Does synthetic demonstrations generalize to spatial and object variations?</em> </a>
+                </p>
+				<center><image src="img/gray_line.jpg" class="img-responsive" width="720px" alt="overview"></center>
+				<center><image src="img/fig4-simulation-result1.jpg" width="720px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/gray_line.jpg" class="img-responsive" width="720px" alt="overview"></center>
+				<center><image src="img/fig5-simulation-result2.jpg" width="720px" class="img-responsive" alt="overview"></center>
+
+                <p class="text-justify">
+					Above results have answered three questions raised earlier, demonstrating that BiDemoSyn can efficiently synthesize high-quality real-world demonstrations, enabling scalable and generalizable visuomotor policy training with minimal human input. <br>
+                    <strong>A1: The efficiency and usability of BiDemoSyn have obvious advantages over baselines.</strong> <br>
+					<strong>A2: Demonstrations obtained via BiDemoSyn can support scalable imitation learning.</strong> <br>
+					<strong>A3: Policies trained on BiDemoSyn data can achieve generalization to unseen variations.</strong> </a>
+                </p>
+				<center><image src="img/gray_line.jpg" class="img-responsive" width="720px" alt="overview"></center>
+				<center><image src="img/fig6-realworld-result1.jpg" width="720px" class="img-responsive" alt="overview"></center>
+
+            </div>
+        </div>
+
+		
+		
+        <div class="row">
+    		<div class="col-md-10 col-md-offset-1">	
+				<h3>
+                    ▶ ③ Visualization and Analysis of Real-World Rollouts
+                </h3>
+				<center><image src="img/fig9-qualitative-results.jpg" width="900px" class="img-responsive" alt="overview"></center>
+                <p class="text-justify">
+					Above is the visualization of all six bimanual tasks performed on real robots. All models are trained and tested under the ID evaluations. EquiBot is chosen as the visuomotor policy. Key dual-arm coordination movements associated with each task are partially enlarged for quick review.</a>
+                </p>
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t1-plugpen.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t2-inserting.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t3-unscrew.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t4-pouring.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t5-pressing.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: right;">
+						<video id="v0" width="470px" autoplay loop muted>
+						  <source src="videos/real-rollout-t6-reorient.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+				</table>
+                <p class="text-justify">
+					We here supplement more qualitative videos of real robot rollouts. The blue rectangle boxes in each video are the corresponding given one-shot demonstrations. The red rectangle boxes are results of novel configurations (e.g., new placements or instances). All related videos have been sped up 2x for faster viewing and checking. These results underscore BiDemoSyn's ability to handle real-world complexities (such as mechanical tolerances and imperfect perception), while also exposing limitations in dynamic force modulation (e.g., over-pressing bottles or lids).</a>
+				</p>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+                <p class="text-justify">
+					While policies trained with BiDemoSyn achieve high success rates, failure analysis reveals systematic challenges. Note that although the policy we trained is executed end-to-end (it establishes an implicit mapping from observations to action outputs), we can still align the analysis from the stage where its failure cases are located to find the core cause of the error. Finally, using the experimental results of EquiBot under out-of-distribution evaluations, we categorize failures into five types according to the task execution logic (mainly from the design module of BiDemoSyn):</a>
+				</p>
+				<center><image src="img/fig10-failure-cases-analysis.jpg" width="700px" class="img-responsive" alt="overview"></center>
+                <p class="text-justify">
+					As can be seen, the orientation estimation and initial grasp failures dominate, reflecting two core challenges: (1) current pose estimators struggle with symmetric or textureless objects (e.g., metal spoon or shovel), and (2) gripper-centric path planning lacks fine-grained contact modeling (e.g., avoiding pre-touch collisions for irregular shapes). Addressing these requires advances in category-agnostic pose estimation and short-horizon contact optimization, which are critical directions for our future work.</a>
+				</p>
+				
+			</div>
+        </div>
+		
+		
+					
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{zhou2026dexterity,
+	title={Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning},
+	author={Huayi Zhou*, Wei Gao*, Dekun Lu, Ruiji Liu, Zhanqi Zhang, Ziyang Zhang, Jian Chen, Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, Kui Jia},
+	journal={arXiv preprint arXiv:2606.xxxxx},
+	year={2026}
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+					This work was funded by the Key-Area Research and Development Program of Guangdong Province, China under Grant 2024B0101040004, and the Shenzhen Science and Technology Program under Grant KJZD20240903104008012 and ZDCY20250901113000001. <br>
+					Beyond that, this work was supported by the major leadership and directional guidance of Kui Jia. We sincerely thank all the contributors for their dedication: co-first authors Huayi Zhou and Wei Gao conceptualized the framework and drafted the manuscript, with Huayi Zhou conducting Agilex real-world experiments, and Wei Gao leading the simulation benchmarks, real-world deployment, and core data infrastructure; Dekun Lu and Jian Chen assisted with the data infrastructure and hardware testing; Ruiji Liu, Zhanqi Zhang, and Ziyang Zhang managed the real-robot evaluations on the A1 semi-humanoid and W1 humanoid configurations; Wenlve Zhou, Sheng Xu, and Yongyi Su contributed to text polishing and technical discussions; and Shumin Li, Kangyi Guo, Shichen Xu, and Zixin Huang supported the large-scale real-world teleoperation data collection. <br>
+                    <br><br>
+					The website template was borrowed from <a href="https://jonbarron.info/">Jon Barron</a> and <a href="https://jonbarron.info/zipnerf/">Zip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+		
+    </div>
+</body>
+</html>
