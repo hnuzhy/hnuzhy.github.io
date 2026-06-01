@@ -40,11 +40,15 @@
     <script src="js/app.js"></script>
     <script src="js/video_comparison.js"></script>
 	
-    <script>
-    MathJax = {
-        tex: {inlineMath: {'[+]': [['$', '$']]}}
-    };
-    </script>
+	<!--
+	https://docs.mathjax.org/en/latest/basic/mathematics.html 
+	https://mathjax.github.io/MathJax-demos-web/page/tex-chtml.html
+	https://github.com/mathjax/MathJax#using-mathjax-components-from-a-cdn-on-the-web 
+	
+	<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" defer></script>
+	-->
+	<script> MathJax = { tex: {inlineMath: {'[+]': [['$', '$']]}} }; </script>
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" defer></script>
 	
 </head>
@@ -62,9 +66,9 @@
                 <ul class="list-inline">
                     <li>
 						<a href="https://hnuzhy.github.io">Huayi Zhou</a>$^{*\;1,2}$, Wei Gao$^{*\;1}$, Dekun Lu, Ruiji Liu, Zhanqi Zhang, Ziyang Zhang, Jian Chen, 
-						</br> Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, <a href="http://kuijia.site">Kui Jia</a>$^{\ddag\;1,2}$
-						</br> $^{1}$DexForce Technology    $^{2}$The Chinese University of Hong Kong, Shenzhen
-						</br> $^*$Equal Contribution    $^{\ddag}$Corresponding Author
+						</br> Wenlve Zhou, Sheng Xu, Shumin Li, Kangyi Guo, Shichen Xu, Zixin Huang, Yongyi Su, <a href="http://kuijia.site">Kui Jia</a>$^{\ddager\;1,2}$
+						</br> $^{1}$DexForce Technology &ensp;&ensp; $^{2}$The Chinese University of Hong Kong, Shenzhen
+						</br> $^*$Equal Contribution &ensp;&ensp; $^{\ddager}$Corresponding Author
                     </li>
                 </ul>
             </div>
