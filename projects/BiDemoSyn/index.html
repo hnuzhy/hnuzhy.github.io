@@ -426,6 +426,68 @@
 					We here supplement more qualitative videos of real robot rollouts. The blue rectangle boxes in each video are the corresponding given one-shot demonstrations. The red rectangle boxes are results of novel configurations (e.g., new placements or instances). All related videos have been sped up 2x for faster viewing and checking. These results underscore BiDemoSyn's ability to handle real-world complexities (such as mechanical tolerances and imperfect perception), while also exposing limitations in dynamic force modulation (e.g., over-pressing bottles or lids).</a>
 				</p>
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				<table style="width: 100%; border-collapse: collapse;">
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-plugpen_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-inserting_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-unscrew_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-pouring_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"> <strong>[T1]</strong> plugpen </td>
+						<td style="text-align: center;"> <strong>[T2]</strong> inserting </td>
+						<td style="text-align: center;"> <strong>[T3]</strong> unscrew </td>
+						<td style="text-align: center;"> <strong>[T4]</strong> pouring </td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-pressing_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-reorient_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-reorient_unscrew_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+						<td style="text-align: center;">
+						<video id="v0" width="233px" autoplay loop muted>
+						  <source src="videos/Dyna-unscrew_pouring_all_4_4x-slim.mp4" type="video/mp4" />
+						</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"> <strong>[T5]</strong> pressing </td>
+						<td style="text-align: center;"> <strong>[T6]</strong> reorient </td>
+						<td style="text-align: center;"> <strong>[T7]</strong> reorient_unscrew </td>
+						<td style="text-align: center;"> <strong>[T8]</strong> unscrew_pouring </td>
+					</tr>
+				</table>
+                <p class="text-justify">
+					We provide full dynamic real-robot rollouts of all eight tasks (previous 6 independent tasks and the new 2 composite tasks) with continuous dynamic human interference during the pre-grasping execution. These results further validate BiDemoSyn’s ability to rapidly scale to new, long-horizon tasks with minimal additional engineering, and reinforce its suitability as a practical framework for synthesizing large-scale, real-world training data.</a>
+				</p>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
                 <p class="text-justify">
 					While policies trained with BiDemoSyn achieve high success rates, failure analysis reveals systematic challenges. Note that although the policy we trained is executed end-to-end (it establishes an implicit mapping from observations to action outputs), we can still align the analysis from the stage where its failure cases are located to find the core cause of the error. Finally, using the experimental results of EquiBot under out-of-distribution evaluations, we categorize failures into five types according to the task execution logic (mainly from the design module of BiDemoSyn):</a>
 				</p>
