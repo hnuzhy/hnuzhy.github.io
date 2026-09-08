@@ -145,24 +145,30 @@
 					Our contributions in this extended journal research are fourfold: <strong>(1)</strong> We introduce VLBiMan++, a substantial extension of our previous work VLBiMan, and formulate a Generalization Pyramid for one-shot bimanual manipulation that systematically studies generalization across tasks, objects, scenes, embodiments, and long-term deployment conditions. <strong>(2)</strong> We extend vision-language anchored adaptation beyond rigid-object pose transfer toward more complex object-state variations, including articulated and deformable manipulation, enabling the reusable prior to remain effective under substantially broader geometric and physical changes. <strong>(3)</strong> We establish a substantially expanded real-world evaluation suite covering unseen object categories, cluttered and dynamically perturbed scenes, new heterogeneous dual-arm embodiments, and prolonged closed-loop execution, providing comprehensive evidence of VLBiMan++'s robustness, versatility, and deployment stability. <strong>(4)</strong> We provide extensive analyses of the expanded generalization boundary, including failure modes, robustness under persistent disturbances, and cross-condition transferability, revealing both the practical strengths and remaining limitations of one-shot bimanual manipulation. </a>
                 </p>
 				
-				<center><image src="img/fig1-teaser.jpg" width="850px" class="img-responsive" alt="overview"></center>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+				<center><image src="img/fig1-teaser.jpg" width="880px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
 					<strong>The expanded Vision-Language Anchored Bimanual Manipulation (VLBiMan++).</strong> <em>Left</em>: Taking pouring water as an example, we sketch the entire process of VLBiMan++ based on the one-shot demonstration. <em>Right</em>: Diagram illustration of the proposed <strong>Generalization Pyramid</strong>: Task ➝ Object ➝ Scene ➝ Embodiment ➝ Deployment. VLBiMan++ aims to investigate how far a single human demonstration can serve as a reusable manipulation prior across increasingly diverse tasks, objects, scenes, embodiments, and execution conditions. </a>
                 </p>
 				
-				<center><image src="img/fig2-framework.jpg" width="850px" class="img-responsive" alt="overview"></center>
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
+				<center><image src="img/fig2-framework.jpg" width="820px" class="img-responsive" alt="overview"></center>
 				<p class="text-justify">
 					<strong>Detailed framework of the expanded VLBiMan++.</strong> Taking the pouring water as an example, the paradigm consists of three stages (e.g., decomposition, adaptation, and composition) based on a given demonstration. VLBiMan++ can achieve generalization of unseen spatial placements, category-level new instances, non-rigid object state variations, and heterogeneous novel embodiments under the same task.</a>
                 </p>
 				
+				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
+				
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr>
-						<td style="text-align: left;"><image src="img/fig3-rigid-objects.jpg" width="470px" class="img-responsive" alt="overview"></td>
-						<td style="text-align: right;"><image src="img/fig4-deformable-objects.jpg" width="470px" class="img-responsive" alt="overview"></td>
+						<td style="text-align: left;"><image src="img/fig3-rigid-objects.jpg" width="450px" class="img-responsive" alt="overview"></td>
+						<td style="text-align: right;"><image src="img/fig4-deformable-objects.jpg" width="490px" class="img-responsive" alt="overview"></td>
 					</tr>
 				</table>
 				<p class="text-justify">
-					<strong>Representative Anchor Points.</strong> <em>Left</em>: Illustrations of representative points for target objects in four tasks including <em>pouring</em>, <em>reorient+unscrew</em>, <em>tool-use:spoon</em>, and <em>zip penbag</em>. The first three tasks involve only rigid objects, while the last task involves an articulated object. These anchor points will be used to calculate the change in object position and orientation (not always required). <em>Right</em>: Illustrations of extracted various anchor points for deformable objects in two tasks including <em>coil cable</em> and <em>fold towel</em>. We present the computational results for four test cases of each task. In addition, we also present intermediate results for handling linear or rectangular deformable objects. </a>
+					<strong>Representative Anchor Points.</strong> (<strong><em>Left Part</em></strong>) Illustrations of representative points for target objects in four tasks including <em>pouring</em>, <em>reorient+unscrew</em>, <em>tool-use:spoon</em>, and <em>zip penbag</em>. The first three tasks involve only rigid objects, while the last task involves an articulated object. These anchor points will be used to calculate the change in object position and orientation (not always required). (<strong><em>Right Part</em></strong>) Illustrations of extracted various anchor points for deformable objects in two tasks including <em>coil cable</em> and <em>fold towel</em>. We present the computational results for four test cases of each task. In addition, we also present intermediate results for handling linear or rectangular deformable objects. </a>
                 </p>
 				
 			</div>
@@ -179,8 +185,8 @@
 				
 				<table style="width: 100%; border-collapse: collapse;">
 					<tr>
-						<td style="text-align: left;"><image src="img/fig5-platform1.jpg" width="470px" class="img-responsive" alt="overview"></td>
-						<td style="text-align: right;"><image src="img/fig6-platform2.jpg" width="470px" class="img-responsive" alt="overview"></td>
+						<td style="text-align: left;"><image src="img/fig5-platform1.jpg" width="500px" class="img-responsive" alt="overview"></td>
+						<td style="text-align: right;"><image src="img/fig6-platform2.jpg" width="440px" class="img-responsive" alt="overview"></td>
 					</tr>
 				</table>
 				<p class="text-justify">
@@ -212,12 +218,12 @@
                     ▶ Visualization and Video Records of Real Robot Rollouts
                 </h3>
                 <p class="text-justify">
-					⚠︎ Here, we present only the tasks and experiments that are new compared to the conference version <a href="https://hnuzhy.github.io/projects/VLBiMan/">VLBiMan</a>. All of these new additions were completed on the platform P2. Other original experiments (including those in the main text and appendices of the conference paper) are not repeated here, and readers may refer to the website of the previous conference paper. </a>
+					⚠︎ Here, we present only the tasks and experiments that are new compared to the conference version <a href="https://hnuzhy.github.io/projects/VLBiMan/">VLBiMan</a>. All of these new additions were completed on the platform <strong>P2</strong>. Other original experiments (including those in the main text and appendices of the conference paper) are not repeated here, and readers may refer to the website of the previous conference paper. </a>
                 </p>
 				
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 				
-				<center><image src="img/fig8-nine-tasks-P2.jpg" width="850px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/fig8-nine-tasks-P2.jpg" width="880px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
 					<strong>Generalizability of Diverse Bimanual Tasks.</strong> Visualizations of newly added nine tasks executed on the humanoid-style dual-arm platform <strong>P2</strong>. They are defined to further confirm the universality of VLBiMan++, including (a) four left-arm or right-arm rearrangement skills, (b) combination of new basic skills for two long-horizon rearrangement tasks, (c) a complex task involving articulated bodies, (d) two dual-arm tasks involving linear or rectangular deformable objects. </a>
                 </p>
@@ -265,7 +271,7 @@
 				
 				<image src="img/gray_line.jpg" class="img-responsive" alt="overview">
 				
-				<center><image src="img/fig11-super-long-duration-testing.jpg" width="850px" class="img-responsive" alt="overview"></center>
+				<center><image src="img/fig11-super-long-duration-testing.jpg" width="880px" class="img-responsive" alt="overview"></center>
                 <p class="text-justify">
 					<strong>Super Long-Duration Execution of VLBiMan++.</strong> Video snapshots recorded from a third-person perspective for the super long-duration experiment of <em>reorient</em> on platform <strong>P2</strong>. It contains keyframes from <strong>20</strong> trials in which the left arm (cyan circle) or right arm (yellow circle) was used to upright a bottle lying down in an arbitrary orientation. </a>
                 </p>
