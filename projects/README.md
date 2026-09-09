@@ -1,6 +1,6 @@
 #### Personal Projects and Publications
 `🟥 First Author` `🟦 Co-Author` | `🟩 Accepted` `⬛ Pre-print` | `👀 Computer Vision` `🤖 Embodied Robotics` 
-###### 🟥⬛🤖 **VLBiMan++(arXiv 2026.09)** [VLBiMan++: Expanding the Generalization Boundary of Vision-Language Anchored One-Shot Bimanual Robotic Manipulation](https://hnuzhy.github.io/projects/VLBiManPlus)
+###### 🟥⬛🤖 **VLBiMan++(arXiv 2026.09)** [VLBiMan++: Expanding the Generalization Boundary of Vision-Language Anchored One-Shot Bimanual Manipulation](https://hnuzhy.github.io/projects/VLBiManPlus)
 ###### 🟥🟩🤖 **Dex-BEV(CoRL 2026)** [Dexterity-BEV: Aligning 3D World and Actions for Generalizable Robot Policies Learning](https://hnuzhy.github.io/projects/Dex-BEV)
 ###### 🟦🟩👀 **WildHand(ESWA 2026)** [WildHand: Semi-Supervised 2D Hand Keypoint Detection in the Wild](https://www.sciencedirect.com/science/article/pii/S0957417426031301)
 ###### 🟥🟩🤖 **BiDemoSyn(RSS 2026)** [One-Shot Real-World Demonstration Synthesis for Scalable Bimanual Manipulation](https://hnuzhy.github.io/projects/BiDemoSyn/)
