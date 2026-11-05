@@ -1,5 +1,6 @@
 #### Personal Projects and Publications
 `🟥 First Author` `🟦 Co-Author` | `🟩 Accepted` `⬛ Pre-print` | `👀 Computer Vision` `🤖 Embodied Robotics` 
+###### 🟦⬛🤖 **PointPilot(arXiv 2026.10)** [PointPilot: Unified Robotic Manipulation via Object-centric 3D Point Flow Prediction](https://arxiv.org/abs/2611.02930)
 ###### 🟦⬛🤖 **Praxis(arXiv 2026.09)** [Praxis: Distilling Physical Interaction Priors from Egocentric Videos for Generalizable Whole-Body Manipulation](https://edem-ai.github.io/Praxis/)
 ###### 🟦⬛🤖 **Navi-Agent(arXiv 2026.09)** [Navi-Agent: Unlocalized Monocular Navigation Agent](https://arxiv.org/abs/2609.20388)
 ###### 🟥⬛🤖 **VLBiMan++(arXiv 2026.09)** [VLBiMan++: Expanding the Generalization Boundary of Vision-Language Anchored One-Shot Bimanual Manipulation](https://hnuzhy.github.io/projects/VLBiManPlus)
